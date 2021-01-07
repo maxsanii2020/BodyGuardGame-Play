@@ -1,0 +1,61 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+	<script type="text/javascript" src="src/progressbar.js"></script>
+	<script type="text/javascript" src="src/loadingBarFiles/loading-bar.js"></script>
+	<!--<script type="text/javascript" src="src/bootstrap/js/bootstrap.js"></script>-->
+	<script src="//localhost/phaser_game/src/2.11.0/phaser.js"></script>
+    <script src="./states/StartScreen.js"></script>
+    <script src="./states/index.js"></script>
+    <script src="./states/GameOver.js"></script>
+
+	<!--<link rel="stylesheet" type="text/css" href="src/bootstrap/css/bootstrap.css" />-->
+	<link rel="stylesheet" href="indexStylesheet.css">
+	<link rel="stylesheet" type="text/css" href="src/loadingBarFiles/loading-bar.css"/>	
+    <meta charset="UTF-8" />
+    <title>Making your first Phaser 3 Game - Part 2</title>
+</head>
+<body>
+	<div>
+		<div id="top-menu">
+			<div class="menu-content">
+				<div class="gadget-container Healthbar-area-container">
+					<div id="HealthBar1-container">
+						<span class="containerText">Player</span>
+						<div id="HealthBar1" class="ldBar" data-preset="energy" data-stroke="blue" data-fill-background="#CD5C5C" data-min="0" data-max="100"></div>
+					</div>
+					<div id="HealthBar2-container">
+						<span class="containerText">Boss</span>
+						<div id="HealthBar2" class="ldBar" data-preset="energy" data-stroke="blue" data-fill-background="#CD5C5C" data-min="0" data-max="100"></div>
+					</div>				
+				</div>
+
+
+				<div class="gadget-container satisfactionBar-container">
+					<div class="levelSection">Level<span id="levelElem">0</span></div>
+					<span class="containerText">Boss Satisfaction</span>
+					<div id="satisfactionbarelement" class="satisfactionBar"></div>					
+				</div>
+
+
+				<div class="gadget-container countdown-container">
+					<div class="countdown-title"><span class="containerText">Mission Time</span></div>
+					<div id="clockdiv">											
+					  <div>
+					    <span class="minutes"></span>
+					    <div class="smalltext">Minutes</div>
+					  </div>
+					  <div>
+					    <span class="seconds"></span>
+					    <div class="smalltext">Seconds</div>
+					  </div>
+					</div>					
+				</div>
+			</div>
+
+		</div>
+		<script src="app.js"></script>
+	</div>
+</body>
+</html>

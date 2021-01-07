@@ -1,0 +1,132 @@
+{"frames": {
+
+"terrorist_3_0Idle.png":
+{
+	"frame": {"x":8915,"y":1,"w":587,"h":1245},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":7,"w":587,"h":1245},
+	"sourceSize": {"w":587,"h":1252}
+},
+"terrorist_3_Attack1_000.png":
+{
+	"frame": {"x":6677,"y":1,"w":691,"h":1247},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":89,"y":13,"w":691,"h":1247},
+	"sourceSize": {"w":780,"h":1260}
+},
+"terrorist_3_Attack1_001.png":
+{
+	"frame": {"x":5170,"y":1,"w":738,"h":1248},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":42,"y":10,"w":738,"h":1248},
+	"sourceSize": {"w":780,"h":1258}
+},
+"terrorist_3_Attack1_002.png":
+{
+	"frame": {"x":4418,"y":1,"w":750,"h":1248},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":30,"y":12,"w":750,"h":1248},
+	"sourceSize": {"w":780,"h":1260}
+},
+"terrorist_3_Attack1_003.png":
+{
+	"frame": {"x":5910,"y":1,"w":765,"h":1247},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":15,"y":13,"w":765,"h":1247},
+	"sourceSize": {"w":780,"h":1260}
+},
+"terrorist_3_Attack1_004.png":
+{
+	"frame": {"x":7370,"y":1,"w":770,"h":1246},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":10,"y":14,"w":770,"h":1246},
+	"sourceSize": {"w":780,"h":1260}
+},
+"terrorist_3_Attack1_005.png":
+{
+	"frame": {"x":8142,"y":1,"w":771,"h":1245},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":9,"y":13,"w":771,"h":1245},
+	"sourceSize": {"w":780,"h":1258}
+},
+"terrorist_3_Walk_000.png":
+{
+	"frame": {"x":3823,"y":1,"w":593,"h":1249},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":25,"w":593,"h":1249},
+	"sourceSize": {"w":666,"h":1274}
+},
+"terrorist_3_Walk_001.png":
+{
+	"frame": {"x":1644,"y":1,"w":577,"h":1258},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":29,"y":16,"w":577,"h":1258},
+	"sourceSize": {"w":666,"h":1274}
+},
+"terrorist_3_Walk_002.png":
+{
+	"frame": {"x":1,"y":1,"w":603,"h":1264},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":63,"y":10,"w":603,"h":1264},
+	"sourceSize": {"w":666,"h":1274}
+},
+"terrorist_3_Walk_003.png":
+{
+	"frame": {"x":606,"y":1,"w":513,"h":1262},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":153,"y":12,"w":513,"h":1262},
+	"sourceSize": {"w":666,"h":1274}
+},
+"terrorist_3_Walk_004.png":
+{
+	"frame": {"x":1121,"y":1,"w":521,"h":1259},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":145,"y":15,"w":521,"h":1259},
+	"sourceSize": {"w":666,"h":1274}
+},
+"terrorist_3_Walk_005.png":
+{
+	"frame": {"x":2223,"y":1,"w":499,"h":1257},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":167,"y":17,"w":499,"h":1257},
+	"sourceSize": {"w":666,"h":1274}
+},
+"terrorist_3_Walk_006.png":
+{
+	"frame": {"x":2724,"y":1,"w":507,"h":1256},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":159,"y":18,"w":507,"h":1256},
+	"sourceSize": {"w":666,"h":1274}
+},
+"terrorist_3_Walk_007.png":
+{
+	"frame": {"x":3233,"y":1,"w":588,"h":1252},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":78,"y":22,"w":588,"h":1252},
+	"sourceSize": {"w":666,"h":1274}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "TerroristBlackSpriteSheet.png",
+	"format": "RGBA8888",
+	"size": {"w":9600,"h":1266},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:d0ca75def18d8f929325defcf44e4916:e9119302e021f8e690eba556a727afdc:8592cafb16318b73c01f7480fee8d393$"
+}
+}

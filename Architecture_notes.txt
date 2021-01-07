@@ -1,0 +1,20 @@
+
+************* UI and index.html ****************
+
+* the html code in index.html is run only the first time, and in the next game levels, it won't get re-created. 
+Because everytime we start a new game/level:
+
+game.state.start('Game1');
+
+it will run the three built-in funcitons: preload(), create(), and update() for that state e.g. Game1. So the html in index.html stayes
+intact, and therefore all the top header components won't get re-created. In other words, when phaser start a game, it starts by running
+index.html, and then the js file is embedded at the end of the index file, so it starts running all the phaser js files afterwards. And in 
+each game leve, we just run the three functions belong to the game.state that we select.
+
+* you still can change the value of the top html components in every game in the create() and update() funcitons, but keep this in mind,
+ if you generate an html element and append to the index.html elements, your element stays there for all game.states, because the html in
+ index.html doesn't change, and whatever changes you add to it, it will keep it thorught the levels.
+
+* the UI for the start menu and game-over interface are created in create() funciton as sprites and images, we don't create their UIs in index.html or
+any html file.
+

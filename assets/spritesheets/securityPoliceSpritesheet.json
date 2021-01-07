@@ -1,0 +1,132 @@
+{"frames": {
+
+"security_police_attack_000.png":
+{
+	"frame": {"x":1550,"y":1,"w":520,"h":1196},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":8,"w":520,"h":1196},
+	"sourceSize": {"w":557,"h":1211}
+},
+"security_police_attack_001.png":
+{
+	"frame": {"x":518,"y":1,"w":514,"h":1197},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":25,"y":9,"w":514,"h":1197},
+	"sourceSize": {"w":563,"h":1211}
+},
+"security_police_attack_002.png":
+{
+	"frame": {"x":1,"y":1,"w":515,"h":1199},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":20,"y":8,"w":515,"h":1199},
+	"sourceSize": {"w":563,"h":1211}
+},
+"security_police_attack_003.png":
+{
+	"frame": {"x":1034,"y":1,"w":514,"h":1197},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":27,"y":9,"w":514,"h":1197},
+	"sourceSize": {"w":563,"h":1211}
+},
+"security_police_attack_004.png":
+{
+	"frame": {"x":2587,"y":1,"w":517,"h":1194},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":30,"y":9,"w":517,"h":1194},
+	"sourceSize": {"w":563,"h":1211}
+},
+"security_police_attack_005.png":
+{
+	"frame": {"x":2072,"y":1,"w":513,"h":1195},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":34,"y":9,"w":513,"h":1195},
+	"sourceSize": {"w":563,"h":1211}
+},
+"security_police_stand.png":
+{
+	"frame": {"x":4879,"y":1,"w":515,"h":1185},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":10,"w":515,"h":1185},
+	"sourceSize": {"w":542,"h":1198}
+},
+"security_police_Walk_000.png":
+{
+	"frame": {"x":6480,"y":1,"w":676,"h":1170},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":32,"w":676,"h":1170},
+	"sourceSize": {"w":701,"h":1214}
+},
+"security_police_Walk_001.png":
+{
+	"frame": {"x":3708,"y":1,"w":643,"h":1189},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":42,"y":23,"w":643,"h":1189},
+	"sourceSize": {"w":701,"h":1214}
+},
+"security_police_Walk_002.png":
+{
+	"frame": {"x":3106,"y":1,"w":600,"h":1190},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":86,"y":17,"w":600,"h":1190},
+	"sourceSize": {"w":701,"h":1214}
+},
+"security_police_Walk_003.png":
+{
+	"frame": {"x":4353,"y":1,"w":524,"h":1188},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":160,"y":19,"w":524,"h":1188},
+	"sourceSize": {"w":701,"h":1214}
+},
+"security_police_Walk_004.png":
+{
+	"frame": {"x":5396,"y":1,"w":559,"h":1177},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":122,"y":21,"w":559,"h":1177},
+	"sourceSize": {"w":701,"h":1214}
+},
+"security_police_Walk_005.png":
+{
+	"frame": {"x":5957,"y":1,"w":521,"h":1175},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":161,"y":24,"w":521,"h":1175},
+	"sourceSize": {"w":701,"h":1214}
+},
+"security_police_Walk_006.png":
+{
+	"frame": {"x":7762,"y":1,"w":520,"h":1159},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":164,"y":27,"w":520,"h":1159},
+	"sourceSize": {"w":701,"h":1214}
+},
+"security_police_Walk_007.png":
+{
+	"frame": {"x":7158,"y":1,"w":602,"h":1161},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":81,"y":29,"w":602,"h":1161},
+	"sourceSize": {"w":701,"h":1214}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "securityPoliceSpritesheet.png",
+	"format": "RGBA8888",
+	"size": {"w":8400,"h":1201},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:32df6144e23028c80491461857065e9a:788f31e147c40824e52fefcb5ecba41f:0a6673005b3dd4feb16a5e665c9a0f11$"
+}
+}

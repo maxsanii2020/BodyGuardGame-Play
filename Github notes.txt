@@ -1,0 +1,48 @@
+
+********* Commit/Push your changes ***************
+
+1. git add --all 
+(add all your new changes to the stage)
+
+2. git commit -m "after Waitiling is completed"
+(commit your changes, with a message, -m means that you want to add a message)
+
+3. git push https://github.com/MeghdadSunny/BodyGuardProj.git
+(this is the URL of your bodyguard project)
+
+4. go to the github, and see your changes.
+
+
+********* New Instruciton for Commit/Push your changes ***************
+
+1. Open GITHub Desktop
+
+2. Under the Changes tab, it will detect the new changes since last push
+
+3. Select the changed files, and write a comment and then "Commit".
+
+4. It will show you the pending commit to be pushed to git, select "Push"
+
+5. Check the changes in the github site.
+
+************** New Account **************************
+
+username: meghi2009@gmail.com
+pass: (3 digit of your famous acronym, capital M) + secret be farsi + sale tavalode irani
+
+Repository
+https://github.com/maxsanii2020/BodyGuardGame_Official
+
+****************************************
+
+
+
+******** Old Disabled Github Account ****************
+
+username: meghdads2020@gmail.com
+pass: (3 digit of your famous acronym, capital M) + secret be farsi + sale tavalode irani
+
+Repository
+https://github.com/MeghdadSunny/BodyGuardProj
+
+****************************************

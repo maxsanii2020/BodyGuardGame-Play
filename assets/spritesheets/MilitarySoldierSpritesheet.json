@@ -1,0 +1,132 @@
+{"frames": {
+
+"militarySoldier_Attack_000.png":
+{
+	"frame": {"x":2010,"y":1,"w":679,"h":1197},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":13,"w":679,"h":1197},
+	"sourceSize": {"w":714,"h":1210}
+},
+"militarySoldier_Attack_001.png":
+{
+	"frame": {"x":3946,"y":1,"w":694,"h":1196},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":12,"w":694,"h":1196},
+	"sourceSize": {"w":714,"h":1208}
+},
+"militarySoldier_Attack_002.png":
+{
+	"frame": {"x":3222,"y":1,"w":722,"h":1196},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":12,"w":722,"h":1196},
+	"sourceSize": {"w":726,"h":1208}
+},
+"militarySoldier_Attack_003.png":
+{
+	"frame": {"x":1294,"y":1,"w":714,"h":1198},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":12,"w":714,"h":1198},
+	"sourceSize": {"w":718,"h":1210}
+},
+"militarySoldier_Attack_004.png":
+{
+	"frame": {"x":587,"y":1,"w":705,"h":1199},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":11,"w":705,"h":1199},
+	"sourceSize": {"w":716,"h":1210}
+},
+"militarySoldier_Attack_005.png":
+{
+	"frame": {"x":4642,"y":1,"w":712,"h":1195},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":13,"w":712,"h":1195},
+	"sourceSize": {"w":716,"h":1208}
+},
+"militarySoldier_Idle_000.png":
+{
+	"frame": {"x":1,"y":1,"w":584,"h":1200},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":6,"w":584,"h":1200},
+	"sourceSize": {"w":584,"h":1206}
+},
+"militarySoldier_Walk_000.png":
+{
+	"frame": {"x":7369,"y":1,"w":603,"h":1174},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":33,"w":603,"h":1174},
+	"sourceSize": {"w":701,"h":1210}
+},
+"militarySoldier_Walk_001.png":
+{
+	"frame": {"x":5815,"y":1,"w":567,"h":1191},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":49,"y":23,"w":567,"h":1191},
+	"sourceSize": {"w":700,"h":1214}
+},
+"militarySoldier_Walk_002.png":
+{
+	"frame": {"x":2691,"y":1,"w":529,"h":1197},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":94,"y":16,"w":529,"h":1197},
+	"sourceSize": {"w":701,"h":1213}
+},
+"militarySoldier_Walk_003.png":
+{
+	"frame": {"x":5356,"y":1,"w":457,"h":1195},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":169,"y":17,"w":457,"h":1195},
+	"sourceSize": {"w":700,"h":1212}
+},
+"militarySoldier_Walk_004.png":
+{
+	"frame": {"x":6384,"y":1,"w":525,"h":1191},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":155,"y":20,"w":525,"h":1191},
+	"sourceSize": {"w":697,"h":1214}
+},
+"militarySoldier_Walk_005.png":
+{
+	"frame": {"x":6911,"y":1,"w":456,"h":1185},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":168,"y":22,"w":456,"h":1185},
+	"sourceSize": {"w":699,"h":1212}
+},
+"militarySoldier_Walk_006.png":
+{
+	"frame": {"x":8506,"y":1,"w":456,"h":1164},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":164,"y":26,"w":456,"h":1164},
+	"sourceSize": {"w":699,"h":1203}
+},
+"militarySoldier_Walk_007.png":
+{
+	"frame": {"x":7974,"y":1,"w":530,"h":1164},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":84,"y":29,"w":530,"h":1164},
+	"sourceSize": {"w":699,"h":1203}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "MilitarySoldierSpritesheet.png",
+	"format": "RGBA8888",
+	"size": {"w":8963,"h":1202},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:ea9eb31b3de5e33f3f22aade31dbe670:43ae03e130876351199b3fc9efc5d430:7dfda2d8408be7c679ac8048d34f8076$"
+}
+}

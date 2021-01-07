@@ -1,0 +1,124 @@
+{"frames": {
+
+"headphoneSoldier_Attack_000.png":
+{
+	"frame": {"x":5010,"y":1,"w":732,"h":1192},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":18,"w":732,"h":1192},
+	"sourceSize": {"w":758,"h":1210}
+},
+"headphoneSoldier_Attack_001.png":
+{
+	"frame": {"x":2107,"y":1,"w":748,"h":1195},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":17,"w":748,"h":1195},
+	"sourceSize": {"w":758,"h":1212}
+},
+"headphoneSoldier_Attack_002.png":
+{
+	"frame": {"x":3622,"y":1,"w":752,"h":1193},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":17,"w":752,"h":1193},
+	"sourceSize": {"w":768,"h":1210}
+},
+"headphoneSoldier_Attack_003.png":
+{
+	"frame": {"x":583,"y":1,"w":766,"h":1196},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":14,"w":766,"h":1196},
+	"sourceSize": {"w":766,"h":1210}
+},
+"headphoneSoldier_Attack_004.png":
+{
+	"frame": {"x":1351,"y":1,"w":754,"h":1196},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":16,"w":754,"h":1196},
+	"sourceSize": {"w":766,"h":1212}
+},
+"headphoneSoldier_Attack_005.png":
+{
+	"frame": {"x":2857,"y":1,"w":763,"h":1193},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":17,"w":763,"h":1193},
+	"sourceSize": {"w":768,"h":1210}
+},
+"headphoneSoldier_Idle_000.png":
+{
+	"frame": {"x":1,"y":1,"w":580,"h":1198},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":10,"w":580,"h":1198},
+	"sourceSize": {"w":586,"h":1208}
+},
+"headphoneSoldier_Walk_000.png":
+{
+	"frame": {"x":8042,"y":1,"w":686,"h":1176},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":31,"w":686,"h":1176},
+	"sourceSize": {"w":717,"h":1210}
+},
+"headphoneSoldier_Walk_001.png":
+{
+	"frame": {"x":5744,"y":1,"w":665,"h":1192},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":32,"y":22,"w":665,"h":1192},
+	"sourceSize": {"w":717,"h":1214}
+},
+"headphoneSoldier_Walk_002.png":
+{
+	"frame": {"x":4376,"y":1,"w":632,"h":1193},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":67,"y":15,"w":632,"h":1193},
+	"sourceSize": {"w":715,"h":1208}
+},
+"headphoneSoldier_Walk_003.png":
+{
+	"frame": {"x":6411,"y":1,"w":528,"h":1189},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":175,"y":19,"w":528,"h":1189},
+	"sourceSize": {"w":717,"h":1210}
+},
+"headphoneSoldier_Walk_004.png":
+{
+	"frame": {"x":6941,"y":1,"w":569,"h":1188},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":137,"y":22,"w":569,"h":1188},
+	"sourceSize": {"w":717,"h":1210}
+},
+"headphoneSoldier_Walk_005.png":
+{
+	"frame": {"x":7512,"y":1,"w":528,"h":1180},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":176,"y":25,"w":528,"h":1180},
+	"sourceSize": {"w":717,"h":1208}
+},
+"headphoneSoldier_Walk_006.png":
+{
+	"frame": {"x":8730,"y":1,"w":528,"h":1156},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":173,"y":27,"w":528,"h":1156},
+	"sourceSize": {"w":716,"h":1210}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "HeadphoneSoldierSpritesheet.png",
+	"format": "RGBA8888",
+	"size": {"w":9259,"h":1200},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:11d72fad21290a75b7ff0f82ab5477fb:9ed460cd8017ab8cc082ce42a4a57d7b:e27f1c5c3e3cde660719443a435c31c7$"
+}
+}

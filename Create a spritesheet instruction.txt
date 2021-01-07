@@ -1,0 +1,61 @@
+
+* Image:
+1. Crop the images, usually to remove the bullet, but you can remove the back and front size.
+	- In GIMP, select the size and remember the width number, then click on crop.
+	(it's better to not crop walk images, cause it will damage the harmony of walking when you cut it, it won't look nice in animation)
+	(only crop the images of shooting)
+	
+
+2. If the image had an shadow, remove it:
+	- In GIMP, select the free tool(third icon on the left), and draw around the shadow, and then press "Delete", and then "CTR+Shift+A"
+
+3. resize the image to .22 percent, and export it.
+
+* TexturePacker:
+- set the options according to the image
+- Select one Idle image and put it as the first image, by changing its file name
+- Select the walk and attack images
+
+- Data Format -> Phaser(JSONHash)
+- Texture Format -> PNG-8(Indexed)
+- Max size -> 8192 x 2048(or higher)
+- uncheck "Multipack"
+
+
+* Code:
+- In Index.js, add the spritesheet file (one line)
+- In SpriteConfig.cs, add a new case statement for two Switch statements:
+	- find the bulletPosition
+	- set the default frame, it's based on the order that you put the images in TextPacker.
+	- set the walk and attack animations, based on the json file, look at the file name you will figure out how to do it.
+	(name the number of the images from 000, if not it will send an error)
+	E.G:
+        this.sprite.animations.add('walk', Phaser.Animation.generateFrameNames('maskbandit_Walk_', 0, 7, '.png', 3), 12, true,false);
+	- there are 8 images starting from 000 to 007
+
+
+
+- in game_config.js, create a new entry for this charactor.
+
+(that's it, you don't have to do anything to the code that creates and populates characters, it works dynamically based on character array
+that you already changed in the last part.)
+
+
+
+****************** Tips on editing images/spritesheets *********************
+
+- make sure the name of the spritehseet.json matches with the name pre-text for Walk and Attack (look for capital letters, it matters!)
+
+- make sure that the name of the images start with 000, not 001, that way when you put the range in the code, you can put 0 to something.
+
+
+
+
+
+
+
+
+
+
+
+

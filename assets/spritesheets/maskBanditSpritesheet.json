@@ -1,0 +1,124 @@
+{"frames": {
+
+"A_maskBandit_Idle_00.png":
+{
+	"frame": {"x":5416,"y":1,"w":495,"h":1186},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":13,"w":495,"h":1186},
+	"sourceSize": {"w":497,"h":1204}
+},
+"maskBandit_attack_000.png":
+{
+	"frame": {"x":5913,"y":1,"w":495,"h":1185},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":495,"h":1185},
+	"sourceSize": {"w":495,"h":1185}
+},
+"maskBandit_attack_001.png":
+{
+	"frame": {"x":4296,"y":1,"w":495,"h":1187},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":495,"h":1187},
+	"sourceSize": {"w":495,"h":1188}
+},
+"maskBandit_attack_002.png":
+{
+	"frame": {"x":3751,"y":1,"w":543,"h":1187},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":543,"h":1187},
+	"sourceSize": {"w":573,"h":1187}
+},
+"maskBandit_attack_003.png":
+{
+	"frame": {"x":3160,"y":1,"w":589,"h":1189},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":589,"h":1189},
+	"sourceSize": {"w":603,"h":1189}
+},
+"maskBandit_attack_004.png":
+{
+	"frame": {"x":4793,"y":1,"w":621,"h":1186},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":621,"h":1186},
+	"sourceSize": {"w":639,"h":1186}
+},
+"maskbandit_Walk_000.png":
+{
+	"frame": {"x":6901,"y":1,"w":584,"h":1183},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":30,"w":584,"h":1183},
+	"sourceSize": {"w":698,"h":1241}
+},
+"maskbandit_Walk_001.png":
+{
+	"frame": {"x":1018,"y":1,"w":554,"h":1211},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":34,"y":21,"w":554,"h":1211},
+	"sourceSize": {"w":698,"h":1241}
+},
+"maskbandit_Walk_002.png":
+{
+	"frame": {"x":1,"y":1,"w":505,"h":1220},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":85,"y":14,"w":505,"h":1220},
+	"sourceSize": {"w":698,"h":1241}
+},
+"maskbandit_Walk_003.png":
+{
+	"frame": {"x":508,"y":1,"w":508,"h":1215},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":98,"y":17,"w":508,"h":1215},
+	"sourceSize": {"w":698,"h":1241}
+},
+"maskbandit_Walk_004.png":
+{
+	"frame": {"x":1574,"y":1,"w":583,"h":1204},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":95,"y":20,"w":583,"h":1204},
+	"sourceSize": {"w":698,"h":1241}
+},
+"maskbandit_Walk_005.png":
+{
+	"frame": {"x":2159,"y":1,"w":499,"h":1202},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":96,"y":23,"w":499,"h":1202},
+	"sourceSize": {"w":698,"h":1241}
+},
+"maskbandit_Walk_006.png":
+{
+	"frame": {"x":6410,"y":1,"w":489,"h":1184},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":98,"y":25,"w":489,"h":1184},
+	"sourceSize": {"w":698,"h":1241}
+},
+"maskbandit_Walk_007.png":
+{
+	"frame": {"x":2660,"y":1,"w":498,"h":1195},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":88,"y":27,"w":498,"h":1195},
+	"sourceSize": {"w":698,"h":1241}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "maskBanditSpritesheet.png",
+	"format": "RGBA8888",
+	"size": {"w":7486,"h":1222},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:bbec368c9535623081b4a3952a0007fb:12e26d6c936382b926ffc4a39456f618:0d471b68d7808d1a247c1ff624a590a4$"
+}
+}

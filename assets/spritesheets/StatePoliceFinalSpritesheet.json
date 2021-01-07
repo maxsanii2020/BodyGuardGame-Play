@@ -1,0 +1,124 @@
+{"frames": {
+
+"StatePolice__AA_Idle.png":
+{
+	"frame": {"x":559,"y":1,"w":486,"h":1211},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":36,"y":10,"w":486,"h":1211},
+	"sourceSize": {"w":528,"h":1229}
+},
+"StatePolice__Attack3_000.png":
+{
+	"frame": {"x":4877,"y":1,"w":490,"h":1197},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":22,"y":4,"w":490,"h":1197},
+	"sourceSize": {"w":723,"h":1208}
+},
+"StatePolice__Attack3_001.png":
+{
+	"frame": {"x":3194,"y":1,"w":489,"h":1200},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":28,"y":5,"w":489,"h":1200},
+	"sourceSize": {"w":723,"h":1211}
+},
+"StatePolice__Attack3_002.png":
+{
+	"frame": {"x":3685,"y":1,"w":574,"h":1199},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":24,"y":4,"w":574,"h":1199},
+	"sourceSize": {"w":723,"h":1208}
+},
+"StatePolice__Attack3_003.png":
+{
+	"frame": {"x":4261,"y":1,"w":614,"h":1198},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":28,"y":4,"w":614,"h":1198},
+	"sourceSize": {"w":723,"h":1208}
+},
+"StatePolice__Attack3_004.png":
+{
+	"frame": {"x":5369,"y":1,"w":639,"h":1196},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":33,"y":4,"w":639,"h":1196},
+	"sourceSize": {"w":723,"h":1208}
+},
+"StatePolice_Walk_000.png":
+{
+	"frame": {"x":6010,"y":1,"w":627,"h":1188},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":37,"w":627,"h":1188},
+	"sourceSize": {"w":723,"h":1244}
+},
+"StatePolice_Walk_001.png":
+{
+	"frame": {"x":1047,"y":1,"w":599,"h":1205},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":43,"y":29,"w":599,"h":1205},
+	"sourceSize": {"w":723,"h":1244}
+},
+"StatePolice_Walk_002.png":
+{
+	"frame": {"x":1648,"y":1,"w":561,"h":1205},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":90,"y":23,"w":561,"h":1205},
+	"sourceSize": {"w":723,"h":1244}
+},
+"StatePolice_Walk_003.png":
+{
+	"frame": {"x":2702,"y":1,"w":490,"h":1202},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":164,"y":25,"w":490,"h":1202},
+	"sourceSize": {"w":723,"h":1244}
+},
+"StatePolice_Walk_004.png":
+{
+	"frame": {"x":1,"y":1,"w":556,"h":1213},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":147,"y":26,"w":556,"h":1213},
+	"sourceSize": {"w":723,"h":1244}
+},
+"StatePolice_Walk_005.png":
+{
+	"frame": {"x":2211,"y":1,"w":489,"h":1204},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":163,"y":29,"w":489,"h":1204},
+	"sourceSize": {"w":723,"h":1244}
+},
+"StatePolice_Walk_006.png":
+{
+	"frame": {"x":7191,"y":1,"w":490,"h":1182},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":158,"y":33,"w":490,"h":1182},
+	"sourceSize": {"w":723,"h":1244}
+},
+"StatePolice_Walk_007.png":
+{
+	"frame": {"x":6639,"y":1,"w":550,"h":1186},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":90,"y":35,"w":550,"h":1186},
+	"sourceSize": {"w":723,"h":1244}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "StatePoliceFinalSpritesheet.png",
+	"format": "RGBA8888",
+	"size": {"w":8192,"h":1215},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:d82e78ebd98e8d4a6868c181ae2a0ad6:31a633951d9975ce89966bc1878d5370:861ddc959592b93aef67f3e395999ada$"
+}
+}

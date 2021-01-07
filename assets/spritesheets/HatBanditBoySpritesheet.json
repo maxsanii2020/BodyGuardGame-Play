@@ -1,0 +1,124 @@
+{"frames": {
+
+"hatBanditBoy_Attack_000.png":
+{
+	"frame": {"x":3888,"y":1,"w":538,"h":1184},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":8,"w":538,"h":1184},
+	"sourceSize": {"w":668,"h":1200}
+},
+"hatBanditBoy_Attack_001.png":
+{
+	"frame": {"x":2739,"y":1,"w":527,"h":1186},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":29,"y":9,"w":527,"h":1186},
+	"sourceSize": {"w":666,"h":1203}
+},
+"hatBanditBoy_Attack_002.png":
+{
+	"frame": {"x":1596,"y":1,"w":549,"h":1191},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":26,"y":8,"w":549,"h":1191},
+	"sourceSize": {"w":668,"h":1203}
+},
+"hatBanditBoy_Attack_003.png":
+{
+	"frame": {"x":2147,"y":1,"w":590,"h":1188},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":29,"y":8,"w":590,"h":1188},
+	"sourceSize": {"w":669,"h":1205}
+},
+"hatBanditBoy_Attack_004.png":
+{
+	"frame": {"x":3268,"y":1,"w":618,"h":1185},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":32,"y":7,"w":618,"h":1185},
+	"sourceSize": {"w":666,"h":1203}
+},
+"hatBanditBoy_Idle_000.png":
+{
+	"frame": {"x":1,"y":1,"w":530,"h":1199},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":9,"w":530,"h":1199},
+	"sourceSize": {"w":549,"h":1213}
+},
+"hatBanditBoy_Walk_000.png":
+{
+	"frame": {"x":6643,"y":1,"w":603,"h":1157},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":36,"w":603,"h":1157},
+	"sourceSize": {"w":685,"h":1229}
+},
+"hatBanditBoy_Walk_001.png":
+{
+	"frame": {"x":4428,"y":1,"w":561,"h":1181},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":48,"y":27,"w":561,"h":1181},
+	"sourceSize": {"w":685,"h":1229}
+},
+"hatBanditBoy_Walk_002.png":
+{
+	"frame": {"x":1064,"y":1,"w":530,"h":1193},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":81,"y":21,"w":530,"h":1193},
+	"sourceSize": {"w":685,"h":1229}
+},
+"hatBanditBoy_Walk_003.png":
+{
+	"frame": {"x":533,"y":1,"w":529,"h":1198},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":79,"y":23,"w":529,"h":1198},
+	"sourceSize": {"w":685,"h":1229}
+},
+"hatBanditBoy_Walk_004.png":
+{
+	"frame": {"x":6052,"y":1,"w":589,"h":1168},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":77,"y":25,"w":589,"h":1168},
+	"sourceSize": {"w":685,"h":1229}
+},
+"hatBanditBoy_Walk_005.png":
+{
+	"frame": {"x":5521,"y":1,"w":529,"h":1170},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":78,"y":28,"w":529,"h":1170},
+	"sourceSize": {"w":685,"h":1229}
+},
+"hatBanditBoy_Walk_006.png":
+{
+	"frame": {"x":7248,"y":1,"w":529,"h":1154},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":79,"y":31,"w":529,"h":1154},
+	"sourceSize": {"w":685,"h":1229}
+},
+"hatBanditBoy_Walk_007.png":
+{
+	"frame": {"x":4991,"y":1,"w":528,"h":1172},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":79,"y":33,"w":528,"h":1172},
+	"sourceSize": {"w":685,"h":1229}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "HatBanditBoySpritesheet.png",
+	"format": "RGBA8888",
+	"size": {"w":7778,"h":1201},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:4964b8b3ca47ba8f04275b0b72449799:805ae9fd60fb94f6bc659755085dd303:5fa41414400450dd83a740866ed62705$"
+}
+}

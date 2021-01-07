@@ -1,0 +1,124 @@
+{"frames": {
+
+"GangBandit_Attack_000.png":
+{
+	"frame": {"x":1642,"y":1,"w":514,"h":1204},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":6,"w":514,"h":1204},
+	"sourceSize": {"w":646,"h":1222}
+},
+"GangBandit_Attack_001.png":
+{
+	"frame": {"x":544,"y":1,"w":510,"h":1207},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":22,"y":6,"w":510,"h":1207},
+	"sourceSize": {"w":644,"h":1222}
+},
+"GangBandit_Attack_002.png":
+{
+	"frame": {"x":1,"y":1,"w":541,"h":1211},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":18,"y":6,"w":541,"h":1211},
+	"sourceSize": {"w":646,"h":1222}
+},
+"GangBandit_Attack_003.png":
+{
+	"frame": {"x":1056,"y":1,"w":584,"h":1206},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":23,"y":7,"w":584,"h":1206},
+	"sourceSize": {"w":650,"h":1222}
+},
+"GangBandit_Attack_004.png":
+{
+	"frame": {"x":2671,"y":1,"w":614,"h":1200},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":28,"y":9,"w":614,"h":1200},
+	"sourceSize": {"w":650,"h":1222}
+},
+"GangBandit_Idle_000.png":
+{
+	"frame": {"x":2158,"y":1,"w":511,"h":1203},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":6,"w":511,"h":1203},
+	"sourceSize": {"w":542,"h":1215}
+},
+"GangBandit_Walk_000.png":
+{
+	"frame": {"x":7034,"y":1,"w":618,"h":1148},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":41,"w":618,"h":1148},
+	"sourceSize": {"w":647,"h":1216}
+},
+"GangBandit_Walk_001.png":
+{
+	"frame": {"x":4873,"y":1,"w":580,"h":1170},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":46,"y":33,"w":580,"h":1170},
+	"sourceSize": {"w":647,"h":1216}
+},
+"GangBandit_Walk_002.png":
+{
+	"frame": {"x":3287,"y":1,"w":533,"h":1174},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":95,"y":26,"w":533,"h":1174},
+	"sourceSize": {"w":647,"h":1216}
+},
+"GangBandit_Walk_003.png":
+{
+	"frame": {"x":4351,"y":1,"w":520,"h":1173},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":105,"y":28,"w":520,"h":1173},
+	"sourceSize": {"w":647,"h":1216}
+},
+"GangBandit_Walk_004.png":
+{
+	"frame": {"x":3822,"y":1,"w":527,"h":1174},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":95,"y":30,"w":527,"h":1174},
+	"sourceSize": {"w":647,"h":1216}
+},
+"GangBandit_Walk_005.png":
+{
+	"frame": {"x":5993,"y":1,"w":518,"h":1169},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":105,"y":33,"w":518,"h":1169},
+	"sourceSize": {"w":647,"h":1216}
+},
+"GangBandit_Walk_006.png":
+{
+	"frame": {"x":6513,"y":1,"w":519,"h":1153},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":106,"y":36,"w":519,"h":1153},
+	"sourceSize": {"w":647,"h":1216}
+},
+"GangBandit_Walk_007.png":
+{
+	"frame": {"x":5455,"y":1,"w":536,"h":1169},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":88,"y":38,"w":536,"h":1169},
+	"sourceSize": {"w":647,"h":1216}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "GangBanditSpritesheet.png",
+	"format": "RGBA8888",
+	"size": {"w":7653,"h":1213},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:fc623f20971a9a5fb43f4626067be2d8:d78619aa1986e9aa6a82478bf4e99a7e:5709524d58d317ec31d667c067d0932d$"
+}
+}

@@ -1,0 +1,282 @@
+/************************ Last Status ***************************/
+
+
+
+/************************ Current General Issues ***************************/
+
+- !DONE when enemy's body goes half way off the world, it's still active, so it can stand and shoot.
+- !DONE Test the audio of the shootings, they seem to be the same.
+
+/************************ To-Do ***************************/
+
+Message ideas:
+- !DONE expand the recentMessageList to 10 item.
+- !DONE detect shooting, isShootingHappening, on sprite.Attack funciton set the flag to true, and on Update(), every 2, 3 sec, check all sprites in
+  the world, check their currentAction, if non were in attack, set isShootingHappening to false.
+- !DONE change stop Tolerance, add to condition, if we are not in shooitngMode.
+- !DONE add general shooting message.
+- !DONE enemies stop shooting and run if player is not alive or boss.
+- !DONE last 10 sec, with low boss health, I'm dying... Save me.
+- !DONE last 10 sec, with low player health "the help is coming...hang in there"
+- !DONE add a new message for Helping is coming, in the last 10 second.
+- !DONE if boss reached to his last health point, he stops making any comments, like nice shooting, don't stop people, ... in funciton selectMessageType(), 
+  we check if the flag for lastHealth is set, then we always set certain flags to false.
+- !DONE create an object for holding the health points for enemy/people.
+- !DONE for setting the value of satisfaciton, right now we directly add or deduct points to it, create a funciton that handles changing satisfaction value.(small)
+- !DONE distanceToKillBoss and distanceToGreetBoss should be random number, random between a defined range.
+- !DONE add random running feature to both enemies/people, anyone could randomly start running, but enemies are more likely to run.(large)
+- !DONE for making people to run, you can go through the list of people, and randomly set the walkingSpeed of each person to higher number, and enemies have higher chance to walk fast.
+- !DONE when shooting happens, stop the default music and play the yelling sound.
+- !DONE add more sounds for scared people, and choose one randomly.
+- !DONE when people are scared, make the greetingTime of some people to 0. greetingTime and KillTime.
+- !DONE when the safemode is false, add 1 to everyone's speed rate untill safe mode is over.
+- !DONE when more than 2 people are standing, play the cheering sound.
+- !DONE increase the satisfaction as each person greet the boss every 1 sec or so, you can add it in the people.Update function where they stand and greet.
+- !DONE change the logic for counting the number of greeting people. check the poeple who is standing and have a certain distance to boss at every interval. in the same
+function as checkgreetingStatus.
+- !DONE remove the code for the old logic.
+- !DONE create the logic that people and enemies sometimes walk fast toward the boss, but it's more likely for enemies to talk fast. (that way people have to be more careful about which character it is and what decision to make for that)
+- !DONE when people are scard, add speed to everyone's speed
+- !DONE play a police car in the last 10 seconds, showing that the help is coming.
+* !DONE Boss moves requirement:
+1- !DONE when boss is pushed to the sides or forward, he keeps moving back, until he reaches to an acceptable territory.
+	- create an update method for boss
+	- find the coordination of x and y for side areas.
+	- check if the boss is in the side area, if yes, then move him back.
+	- create a logic for determining the points to add to boss walk to get out of the side area. (give +1 or -1 for x/y depending on where he is at, and then use that point variables to add to his current x/y)
+- !DONE create the update function for Boss, and implement the logic for boss to walk and move.
+
+
+- look into what happens when a sprite goes back to waitingList, do we stop the animation? if not, we should, to avoid the extra processing.
+
+
+
+- pass the values for Satisfaction and health and status to the gameResult object, create a function that sets all these values, and call the function at gameOver and mission Completed.(small)
+- enhance the status page.
+- test performance when you comment out the whole "updateTopValues", you may need to run that function once a while instead of every time in update();
+- give different health to each character.
+- save the game level to the browser local storage, and retrieve the gameLevel from there. provide an option if the user wants to start over or resume in the menu.
+- make the population smart, by looking at the current alive people, based on that make the interval shorter for their entrance.(medium)
+- replace the bodyguard image with a famous person like obama. and possibly have smile and scared faces for him, so it changes as it gets hit.(or even walking animation)
+- change players image to the one that moves with animation. download it from the website.
+- !InProgress Change the mass/drag of poeple/enemy, make them heavy like the Boss.
+
+
+
+
+* Boss moves requirement:
+- !PEnding bodyguard moves once a while, he moves only when there is no shooting happening, and within a certain territory.
+2- !Pending boss moves once a while only if the number of greeting people is less than 2.
+- if boss is in "isMovingToCentral" state, don't run this. And if the number of greeting people is less than 2, he moves.
+- if any of these conditions are true, a new destination will be selected again.
+- divide the central area to 4 quarters, northWest, northEast, southWest, southEast
+- get the coordination of all these 4 points: northWest_x, northWest_y
+- create time variables inside Update, so that it checks it once a while (every 10 sec or so)
+- randomly pick one of the quarters that he's not in there as the destination. select the destination x and y
+- create a separate function to determine the movement points, pass the souce to destination.
+- once a destination is selected, the "isDestinationSelected" becomes true
+- as long as "isDestinationSelected" true, it moves to the destination points. or As long as the destination x and y are not null, it moves to that direction.
+
+
+- !DONE create the satisfaction bar.(medium)
+- !DONE try to replace allcollision loop for colission with a group of all sprites.
+- !DONE Create Update and Damage for Boss, Player (big)
+- !DONE reset the game config when restarting the game, create an global object with properties of those variables, and set the variables in index.cs to these global object, so the global object change for each level (medium)
+- !DONE change the shooting rate of the player, increase the delay.
+- !DONE create a funciton that initializes the gameResult
+- !DONE encapsulate the game config variables into an object, put it in a separate config file, and import it insdie preload().
+- !DONE create a funciton within that config file that sets the values of the game config properties based on the passed Level parameter.
+- !DONE organize the update funciton into small functions in sprite config file.
+- !DONE concatenate the classes for people and enemies, and then replace enemies/people arrays with one array.(big)
+- !DONE change the logic for playing the death voice in sprite config update, instead of case staetment and going through all cases, create a property for deathvoice in the
+	people class, and play that death sound
+- !DONE when people see the boss, show a welcome frame of them, and also some of the divert and walk to different y direction, set y based on if they are on the first half or second half of the page.(big)
+- !DONE when people pass world.x, then they come with a random y value.
+- !DONE Create a system for creating people walking with a specific time interval.
+- !DONE Re-visit the system design for all these items below, especially for separating enemies/people.
+- !DONE Create Start menue and Game Over menue
+- !DONE Create the stages, first you need to put all the index code inside a class, try and see if it works.
+
+
+/************************ Fixed Issues ***************************/
+
+- !Fixed when you create a sprite from a class, the spreadsheet animation takes the whole size of spread sheet. Even if you put the animation code in the
+index, it still won't fix it, probably setting the image of the sprite in the class causes that. 
+
+
+
+
+/************************ Ideas/Look into later ***************************/
+
+- the people who greet the boss will add popularity points, as they stay and greet, as more poeple greet, you get more points, that way it becomes
+important to judge poeple and select who can stay and greet, and who I need to divert and stop, it adds the judging element to it.
+- Create a character like Obama, that comes and visit/shake hand with the boss, and if you hit him, you lose as well.
+- Create a intelligence report on top, showing 3 states, dangerous, safe, moderate, based on the number of alive enemies in the crowd.
+- Create a bar for the Boss's satisfaction, based on how often you push the boss and the people.
+
+- !DONE Enhance the CreatePeopleSprite class to allow multiple images
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************************ Last Status ***************************/
+
+
+
+/************************ Current General Issues ***************************/
+
+- !DONE when enemy's body goes half way off the world, it's still active, so it can stand and shoot.
+- !DONE Test the audio of the shootings, they seem to be the same.
+
+/************************ To-Do ***************************/
+
+-*** Create the scenario that the enemy stops if he gets close to the boss and starts shooting at him.(big)
+
+preStep: !done research and learn how to create animation with jsonHash spritesheet. !Very Important, and fundamental achievement.
+
+to-do: each enemy weapon that you created, must implement the overlap event with the boss and player, create a loop of handling 
+the overlap if the enemy is alive.
+
+
+
+1. !DONE When enemy gets close, change the frame:
+	- add a new spriteType with shooting frame.
+	- create the property for shooting frame.
+	- create a function "attack", call this function within update when enemy gets close
+	- implement the logic that once the attack has been called, it endlessly do that, even if enemy gets far from boss.
+	- in attack function, add changing frame to shooting.
+
+2. !DONE Implement shooting from the gun point:
+	- !DONE create a property "gunPoint" for each spriteType.
+	- !DONE implement shooting from that gunPoint
+	- !DONE implement shooting with time interval
+	- !DONE review the code that you wrote, and enhance it if needed.
+	- !DONE play the shooting sound, add a new sound
+
+3. !DONE Implement changing the angle toward the Boss: use this (people[0].sprite.angle = -30, look at the tank game for angle)		
+	- !DONE research and implement how to turn the sprite within a time
+	- !DONEimplement turning the sprite toward the boss
+	- !DONE research and implement how to still shoot from gunPoint when sprite turns.
+	- !DONE implement adding an angle interval based on the real angle
+	- !DONE implement the logic for keep changing the angle within the interval and within the period of time.
+
+3.b !DONE make the shooting animation smooth:
+	- !DONE research on how to do ratation within a time period.
+	- !DONE research on if it's possible to change the angle of weapon object in phaser.
+
+
+!DONE two problems we have:
+	- !DONE when the enemy first starts to shoot, it will rotate from original angle to the player angle, which is a big jump, so it looks shaky.
+	- !IT's OK the enemiy rotates twice per update, once adjust to the player, then while shooting with error. the shake happens as a result of
+	  that, after every time it rotates with error, then on the next update, sprite will come back to the angle between player.
+	- !IT's OK after rotation with error angle, sometimes error is too big, and so the animation rotates alot and it looks shaky.
+
+
+4. !DONE When the enemgy gets distant from both the player/boss, it stops attack and runs, with faster speed walk.(think about if it's a good logic)
+	- !DONE if enemy sees the boss or player again, it start the attack mood.
+	- !DONE when enemy is in attack mode, and not close to player/boss, it will either run or gets close to the boss.
+	- !DONE enhance the attack and updateEnemy function so that it becomes independent of other values/properties.
+
+
+5. !DONE Change the Update logic for enemy in relation to player and Boss.
+	- !DONE if enemy gets stop, it will start the attack.
+
+6. Comprehensive Testing
+
+
+
+Extras:
+- cover the back angle of boss too, add a new sprite for the reverse gun.
+
+
+Research Items
+	- How to shoot bullet from the gun point
+	- How to turn the sprite within a time
+	- How to shoot from the gunPoint still after the turn (might does it automatically)
+	- How to keep changing the angle of sprite toward the boss
+
+
+- create a funciton that initializes the gameResult
+- encapsulate the game config variables into an object, put it in a separate config file, and import it insdie preload().
+- create a funciton within that config file that sets the values of the game config properties based on the passed Level parameter.
+- Create Update and Damage for Boss, Player (big)
+- change the shooting rate of the player, increase the delay.
+
+- reset the game config when restarting the game, create an global object with properties of those variables, and set the variables in index.cs to these global object, so the global object change for each level (medium)
+- make the population smart, by looking at the current alive people, based on that make the interval shorter for their entrance.(medium)
+- create the logic that the enemies always come in y coordination which is relative and short distance to the boss.y
+- when people are scard, add speed to everyone's speed
+- add the variable for the chances of enemies creation in the global object
+
+- !InProgress Change the mass/drag of poeple/enemy, make them heavy like the Boss.
+- !InProgress add the stop action voice, and the logic (medium)
+
+
+
+- !DONE organize the update funciton into small functions in sprite config file.
+- !DONE concatenate the classes for people and enemies, and then replace enemies/people arrays with one array.(big)
+- !DONE change the logic for playing the death voice in sprite config update, instead of case staetment and going through all cases, create a property for deathvoice in the
+people class, and play that death sound
+- !DONE when people see the boss, show a welcome frame of them, and also some of the divert and walk to different y direction, set y based on if they are on the first half or second half of the page.(big)
+- !DONE when people pass world.x, then they come with a random y value.
+- !DONE Create a system for creating people walking with a specific time interval.
+- !DONE Re-visit the system design for all these items below, especially for separating enemies/people.
+- !DONE Create Start menue and Game Over menue
+- !DONE Create the stages, first you need to put all the index code inside a class, try and see if it works.
+
+
+/************************ Fixed Issues ***************************/
+
+- !Fixed when you create a sprite from a class, the spreadsheet animation takes the whole size of spread sheet. Even if you put the animation code in the
+index, it still won't fix it, probably setting the image of the sprite in the class causes that. 
+
+
+
+
+/************************ Ideas/Look into later ***************************/
+
+- the people who greet the boss will add popularity points, as they stay and greet, as more poeple greet, you get more points, that way it becomes
+important to judge poeple and select who can stay and greet, and who I need to divert and stop, it adds the judging element to it.
+- Create a character like Obama, that comes and visit/shake hand with the boss, and if you hit him, you lose as well.
+- Create a intelligence report on top, showing 3 states, dangerous, safe, moderate, based on the number of alive enemies in the crowd.
+- Create a bar for the Boss's satisfaction, based on how often you push the boss and the people.
+
+- !DONE Enhance the CreatePeopleSprite class to allow multiple images
