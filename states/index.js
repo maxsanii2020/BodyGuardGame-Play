@@ -199,7 +199,8 @@ create: function() {
     document.getElementById("top-menu").style.display = 'block';
 
     // Resize our game world to be a 2000 x 2000 square
-    game.world.setBounds(0, 0, 1100, 800);
+    //game.world.setBounds(0, 0, 1100, 800);
+    game.world.setBounds(0, 0, 1100, window.innerHeight-110);
 
     // set background image
     game.add.image(0, 0, 'street');
