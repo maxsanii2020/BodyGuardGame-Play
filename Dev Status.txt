@@ -45,14 +45,13 @@ function as checkgreetingStatus.
 	- check if the boss is in the side area, if yes, then move him back.
 	- create a logic for determining the points to add to boss walk to get out of the side area. (give +1 or -1 for x/y depending on where he is at, and then use that point variables to add to his current x/y)
 - !DONE create the update function for Boss, and implement the logic for boss to walk and move.
+- !DONE pass the values for Satisfaction and health and status to the gameResult object, create a function that sets all these values, and call the function at gameOver and mission Completed.(small)
+- !DONE enhance the status page.
 
 
-- look into what happens when a sprite goes back to waitingList, do we stop the animation? if not, we should, to avoid the extra processing.
+- fix the cop car sound at the end.
+- adjust the shooting sounds.
 
-
-
-- pass the values for Satisfaction and health and status to the gameResult object, create a function that sets all these values, and call the function at gameOver and mission Completed.(small)
-- enhance the status page.
 - test performance when you comment out the whole "updateTopValues", you may need to run that function once a while instead of every time in update();
 - give different health to each character.
 - save the game level to the browser local storage, and retrieve the gameLevel from there. provide an option if the user wants to start over or resume in the menu.

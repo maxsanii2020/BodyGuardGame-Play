@@ -3,55 +3,96 @@ demo.GameOver = function(){};
 demo.GameOver.prototype = {
 
   preload: function(){
-    //game.load.image('tree', 'assets/background/bgImage_InterSection.jpg');
+    game.load.spritesheet('NextMissionButton', 'assets/images/nextMissionButton.png', 200, 50);
+    game.load.spritesheet('RetryMissionButton', 'assets/images/retryMissionButton.png', 200, 50);    
+    game.load.spritesheet('MainMenuButton', 'assets/images/MainMenuButton.png', 200, 50); 
+
   },
 
 
   create: function(){
 
+    var statusText = null;
+    var statusMessageText = null;
+    var headerStyle = null;
+    var nextActionButton = null;
+    var currentGameLevel = gameResult.Level;
+    var currentSatisfactionRate = gameResult.SatisfactionScore;
+
     // Hide the Top-menu at Start Screen
     document.getElementById("top-menu").style.display = 'none';
-  	
-    game.stage.backgroundColor = '#696969';
- 	console.log("GameOver state has started!");
+    game.stage.backgroundColor = 'black';
 
-    var text1 = game.add.text(game.world.centerX - 300, game.world.centerY - 240, 'Game Over!', { fill: '#8B0000' });
-    var text2 = game.add.text(game.world.centerX - 300, game.world.centerY - 140, 'Press Enter to Go to the Game Menu', { fill: '#ffffff' });
+    // Set values for passed scenarios, and determine the top messages
+    if(gameResult.Status == "passed"){
+      // raise the level
+      gameResult.Level++;
+      // give bonus to satisfaciton
+      gameResult.SatisfactionScore = gameResult.SatisfactionScore + ((satisfactionRateScale/100) * satisfactionPoints.NextLevelBonus);
+      statusText = "Mission Accomplished";
+      statusMessageText = "You made it! Congrats you're selected for the next mission.";
+      headerStyle =  { font: "40px Arial", fill: "#3CB371", align: "center", backgroundColor:null, fontWeight: "bold"};
+    } 
+    else 
+    {
+      // set the initial satisfaction value that the user had before he started the game and failed.
+      gameResult.SatisfactionScore = gameResult.initialSatisfactionScore;
+      statusText = "Mission Failed";
 
-    // text: values
-	var Level = "Level: " + gameResult.Level;
-  var Status = "Mission Status: " + gameResult.Status + " " + gameResult.FailureReason;  
-	var satisfaction = "Boss Satisfaction: " + Math.round(gameResult.SatisfactionScore * 100) + " %";
-	var enemiesKilled = "Total Enemies Killed: " + gameResult.EnemiesKilled + " / " + gameResult.EnemiesTotal;
-	var peopleKilled = "Total Civilians Killed: " + gameResult.PeopleKilled + " / " + gameResult.PeopleTotal;
-  var bossHealth = "Boss Health: " + gameResult.BossHealth + " %";
-  var playerHealth = "Player Health: " + gameResult.PlayerHealth + " %";
+      if(gameResult.FailureReason == "fired"){
+        statusMessageText = "You're fired! It's important to keep your boss always satisfied."; 
+      }
+      else if(gameResult.FailureReason == "boss-dead"){
+        statusMessageText = "Your boss is dead.";
+      }
+      else if(gameResult.FailureReason == "player-dead"){
+        statusMessageText = "You couldn't make it.";        
+      }
 
-	// add the texts to the game page
-    var ResultText1 = game.add.text(game.world.centerX - 300, game.world.centerY - 70, Level, { fill: '#ffffff' });
-    var ResultText2 = game.add.text(game.world.centerX - 300, game.world.centerY - 30, Status, { fill: '#ffffff' });
+      headerStyle =  { font: "40px Arial", fill: "#951717", align: "center", backgroundColor:null, fontWeight: "bold"};
+    }
 
-    var ResultText3 = game.add.text(game.world.centerX - 300, game.world.centerY + 30, satisfaction, { fill: '#ffffff' });    
-    var ResultText5 = game.add.text(game.world.centerX - 300, game.world.centerY + 70, bossHealth, { fill: '#ffffff' });
-    var ResultText6 = game.add.text(game.world.centerX - 300, game.world.centerY + 110, playerHealth, { fill: '#ffffff' });
+    // set the texts and buttons for Game success/failed and next missions/retry mission
+    var text1 = game.add.text(game.world.centerX - 300, game.world.centerY - 340, statusText, headerStyle );
+    var text2 = game.add.text(game.world.centerX - 300, game.world.centerY - 290, statusMessageText, { font: "25px Arial", fill: '#B2BABB' });
 
-    var ResultText7 = game.add.text(game.world.centerX - 300, game.world.centerY + 160, enemiesKilled, { fill: '#ffffff' });
-    var ResultText8 = game.add.text(game.world.centerX - 300, game.world.centerY + 200, peopleKilled, { fill: '#ffffff' });
+    // determine the buttons for passed and failure scenarios
+    if(gameResult.Status == "passed"){
+      var nextActionButton = game.add.button(game.world.centerX - 300, game.world.centerY - 230, 'NextMissionButton', StartGameOnClick, this, 2, 1, 0);
+      var retryMissionButton = game.add.button(game.world.centerX - 300, game.world.centerY - 170, 'RetryMissionButton', retryCurrentMission, this, 2, 1, 0);      
+    }
+    else {
+      var retryMissionButton = game.add.button(game.world.centerX - 300, game.world.centerY - 170, 'RetryMissionButton', retryFailedMission, this, 2, 1, 0);
+    }
+
+    var MainMenuButton = game.add.button(game.world.centerX - 300, game.world.centerY - 110, 'MainMenuButton', GameMenuOnClick, this, 2, 1, 0);
+
+
+    // set the texts for performance report
+    var report = "Performance Report  -  Mission " + currentGameLevel;
+  	var satisfaction = "Boss Satisfaction: " + Math.round(currentSatisfactionRate * 100) + " %";
+  	var enemiesKilled = "Total Enemies Killed: " + gameResult.EnemiesKilled + " / " + gameResult.EnemiesTotal;
+  	var peopleKilled = "Total Civilians Killed: " + gameResult.PeopleKilled + " / " + gameResult.PeopleTotal;
+    var bossHealth = "Boss Health: " + gameResult.BossHealth + " %";
+    var playerHealth = "Player Health: " + gameResult.PlayerHealth + " %";
+
+	  // add the performance report texts to the game page
+    var reportStyle = { font: "25px Arial", fill: '#B2BABB' };
+    var reportText = game.add.text(game.world.centerX - 300, game.world.centerY - 30, report, { font: "30px Arial", fill: '#FFFFFF' });
+    var satisfactionText = game.add.text(game.world.centerX - 300, game.world.centerY + 25, satisfaction, reportStyle);    
+    var bossHealthText = game.add.text(game.world.centerX - 300, game.world.centerY + 70, bossHealth, reportStyle);
+    var playerHealthText = game.add.text(game.world.centerX - 300, game.world.centerY + 120, playerHealth, reportStyle);
+    var enemiesKilledText = game.add.text(game.world.centerX - 300, game.world.centerY + 170, enemiesKilled, reportStyle);
+    var civiliansKilledText = game.add.text(game.world.centerX - 300, game.world.centerY + 220, peopleKilled, reportStyle);
 
   },
 
 
   update: function(){
-    if(game.input.keyboard.isDown(Phaser.Keyboard.ENTER) || game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)){    
-      GameMenuOnClick();
+    if(game.input.keyboard.isDown(Phaser.Keyboard.ENTER) || game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)){
+      StartGameOnClick();
     }
-    else if(game.input.keyboard.isDown(Phaser.Keyboard.UP)){
-      gameResult.Level++;
-	  StartGameOnClick();
-    }
-    else{
 
-    }
   }
 
 

@@ -315,7 +315,8 @@ create: function() {
 
     gameMusic_audio.play();
 
-
+    // just adjusting the satisfaction number so if it's over 100, it adjusts it to 100
+    updateSatisfaction("add", 0);
 
     /************** Test ******************************/
     /*
@@ -421,8 +422,7 @@ update: function() {
         else if (boss.sprite != allCollideSprites[i]){    
            game.physics.arcade.overlap(boss.sprite, allCollideSprites[i], touchedBoss, null, this); 
         }
-    }*/    
-
+    }*/
 
     game.world.wrap(player.sprite, 16);
 
@@ -435,6 +435,17 @@ update: function() {
         gameOver("boss-dead");
         bossIsDead = true;
     }
+
+
+    /**************** Testing Tool ***************/
+    if(game.input.keyboard.isDown(Phaser.Keyboard.Z)){       
+        missionCompleted(); 
+    }
+    else if(game.input.keyboard.isDown(Phaser.Keyboard.X))
+    {
+        gameOver("player-dead");
+    }
+    /**********************************************/
 
 },//end of Update
 

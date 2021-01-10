@@ -70,7 +70,8 @@ var satisfactionPoints = {
     bossCompalinStopping: 7,
     bossComplainPushing: 5,
     breakSafeMode: 3,
-    peopleGreetingMin: 2
+    peopleGreetingMin: 2,
+    NextLevelBonus: 50
 }
 
 /* Health Values */
@@ -96,8 +97,8 @@ function setGameLevelProperties(gameLevel) {
 
     switch(gameLevel) {
       case 1:
-        gameConfig.gameDurationMin = 3;
-        gameConfig.gameDurationSec = 40;
+        gameConfig.gameDurationMin = 1;
+        gameConfig.gameDurationSec = 0;
         gameConfig.creatureTotal = 50;
         gameConfig.creatureCount = 0;
         gameConfig.EnemyCreationChance = 0.30;// higher number gives higher chance to create enemies
@@ -112,6 +113,22 @@ function setGameLevelProperties(gameLevel) {
         satisfactionRate = satisfactionRateScale;
         break;
       case 2:
+        gameConfig.gameDurationMin = 1;
+        gameConfig.gameDurationSec = 0;
+        gameConfig.creatureTotal = 60;
+        gameConfig.creatureCount = 0;
+        gameConfig.EnemyCreationChance = 0.40;
+        gameConfig.EnemysReactionChance = 0.40;
+        gameConfig.MaxPeopleInWorldThreshold = 0;
+        gameConfig.initialPeopleCreationTime = 0;
+        gameConfig.creationTime = 1000;//1000;
+        gameConfig.nextCreationTime = 2000;//6000;
+        gameConfig.nextEntranceTime = 0;
+        gameConfig.entranceWaitingTime = 2000;//5000;
+        gameConfig.nextStopCommandTime = 0;
+        satisfactionRate = satisfactionRateScale;
+        break;
+      case 3:
         gameConfig.gameDurationMin = 2;
         gameConfig.gameDurationSec = 0;
         gameConfig.creatureTotal = 30;
@@ -206,6 +223,9 @@ function setGameLevelProperties(gameLevel) {
     // since it catches the satisfaction value at the time of ending the game, not counting afterwards.
     if(gameLevel != 1)
         satisfactionRate = gameResult.SatisfactionScore;
+
+    // save initial satisfaciton to the new satisfaction rate
+    gameResult.initialSatisfactionScore = gameResult.SatisfactionScore;
 
 }
 

@@ -16,6 +16,7 @@ var gameResult = {
   PeopleTotal: 0,
   PeopleKilled: 0,
   SatisfactionScore: 0,
+  initialSatisfactionScore: 0,
   BossHealth: 0,
   PlayerHealth: 0
 };
@@ -28,7 +29,12 @@ demo.StartScreen.prototype = {
   preload: function(){
 
     game.load.image('StartScreenBG', 'assets/images/ScreenStartBG_Bodygaurd.jpg');
-    game.load.spritesheet('StartGameButton', 'assets/images/startGameButtons.png', 200, 50);    
+    game.load.spritesheet('StartGameButton', 'assets/images/startGameButtons-colored.png', 200, 50);
+    game.load.spritesheet('TutorialButton', 'assets/images/tutorialButton.png', 200, 50);
+    game.load.spritesheet('FeedbackButton', 'assets/images/feedbackButton.png', 200, 50);
+    game.load.spritesheet('AboutButton', 'assets/images/aboutButton.png', 200, 50);
+    game.load.spritesheet('StartNextMissionMainMenuButton', 'assets/images/startNextMissionMainMenuButton.png', 200, 50);
+    game.load.spritesheet('StartFirstMissionButton', 'assets/images/startFirstMissionButton.png', 200, 50);
   },
 
 
@@ -38,25 +44,28 @@ demo.StartScreen.prototype = {
     //set background image
     game.add.image(0, 0, 'StartScreenBG');
     game.stage.backgroundColor = 'black';
-    //  Just to kick things off
-    var button = game.add.button(game.world.centerX - 500, game.world.centerY - 200, 'StartGameButton', StartGameOnClick, this, 2, 1, 0);
 
-    //var text = game.add.text(50, 200, 'Click to start the game', { fill: '#ffffff' });
- 	  console.log("state 0 has started!");
+    //  Just to kick things off
+    if(gameResult.Level == 1){
+      var gameStartButton = game.add.button(game.world.centerX - 500, game.world.centerY - 200, 'StartGameButton', StartGameOnClick, this, 2, 1, 0);
+    } else {
+      var gameNextMissionButton = game.add.button(game.world.centerX - 500, game.world.centerY - 260, 'StartNextMissionMainMenuButton', StartGameOnClick, this, 2, 1, 0);
+      var gameRestartButton = game.add.button(game.world.centerX - 500, game.world.centerY - 200, 'StartFirstMissionButton', restartMissionOne, this, 2, 1, 0);    
+    }
+
+    var tutorialButton = game.add.button(game.world.centerX - 500, game.world.centerY - 140, 'TutorialButton', StartGameOnClick, this, 2, 1, 0);
+    var feedbackButton = game.add.button(game.world.centerX - 500, game.world.centerY - 80, 'FeedbackButton', StartGameOnClick, this, 2, 1, 0);
+    var aboutButton = game.add.button(game.world.centerX - 500, game.world.centerY - 20, 'AboutButton', StartGameOnClick, this, 2, 1, 0);
+
   },
 
 
   update: function(){
-    if(game.input.keyboard.isDown(Phaser.Keyboard.ENTER) || game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)){    
+    if(game.input.keyboard.isDown(Phaser.Keyboard.ENTER)){       
       StartGameOnClick();
     }
-    else if(game.input.keyboard.isDown(Phaser.Keyboard.UP)){
-      console.log("Up is entered!");
-      gameResult.Level = 1;
-      console.log("game level is: " + gameResult.Level);
-      game.state.start('GameOver');
-    }
-    else{
+    else
+    {
 
     }
   }
@@ -77,6 +86,24 @@ function GameMenuOnClick () {
   game.state.start('StartScreen');
 }
 
+// user passed for next mission, but retries current mission
+function retryCurrentMission() {
+    gameResult.Level--;
+    gameResult.SatisfactionScore = gameResult.initialSatisfactionScore;
+    StartGameOnClick();
+}
+
+function retryFailedMission() {
+    gameResult.SatisfactionScore = gameResult.initialSatisfactionScore;
+    StartGameOnClick();
+}
+
+function restartMissionOne () {
+  gameResult.Level = 1;
+  StartGameOnClick();
+}
+
+// reset all gameResult properties except .level
 function resetGameValues(){
     gameResult.Score = 0;
     gameResult.Status = null;
