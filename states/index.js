@@ -315,8 +315,6 @@ create: function() {
 
     gameMusic_audio.play();
 
-    // just adjusting the satisfaction number so if it's over 100, it adjusts it to 100
-    updateSatisfaction("add", 0);
 
     /************** Test ******************************/
     /*

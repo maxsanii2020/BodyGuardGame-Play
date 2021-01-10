@@ -27,8 +27,12 @@ demo.GameOver.prototype = {
     if(gameResult.Status == "passed"){
       // raise the level
       gameResult.Level++;
+      
       // give bonus to satisfaciton
-      gameResult.SatisfactionScore = gameResult.SatisfactionScore + ((satisfactionRateScale/100) * satisfactionPoints.NextLevelBonus);
+      gameResult.SatisfactionScore = gameResult.SatisfactionScore + (satisfactionRateScale * (satisfactionPoints.NextLevelBonus/100));
+      if(gameResult.SatisfactionScore > satisfactionRateScale)
+        gameResult.SatisfactionScore = satisfactionRateScale;
+
       statusText = "Mission Accomplished";
       statusMessageText = "You made it! Congrats you're selected for the next mission.";
       headerStyle =  { font: "40px Arial", fill: "#3CB371", align: "center", backgroundColor:null, fontWeight: "bold"};
