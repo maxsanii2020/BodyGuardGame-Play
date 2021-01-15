@@ -21,6 +21,7 @@ var gameResult = {
   PlayerHealth: 0
 };
 
+var gameOverMusic_audio;
 
 demo.StartScreen = function(){};
 
@@ -28,22 +29,34 @@ demo.StartScreen.prototype = {
 
   preload: function(){
 
-    game.load.image('StartScreenBG', 'assets/images/ScreenStartBG_Bodygaurd.jpg');
+    //game.load.image('StartScreenBG', 'assets/images/ScreenStartBG_Bodygaurd.jpg');
+    game.load.image('GameMenu_bg', 'assets/images/gameMenu_bg.jpg');
     game.load.spritesheet('StartGameButton', 'assets/images/startGameButtons-colored.png', 200, 50);
     game.load.spritesheet('TutorialButton', 'assets/images/tutorialButton.png', 200, 50);
     game.load.spritesheet('FeedbackButton', 'assets/images/feedbackButton.png', 200, 50);
     game.load.spritesheet('AboutButton', 'assets/images/aboutButton.png', 200, 50);
     game.load.spritesheet('StartNextMissionMainMenuButton', 'assets/images/startNextMissionMainMenuButton.png', 200, 50);
     game.load.spritesheet('StartFirstMissionButton', 'assets/images/startFirstMissionButton.png', 200, 50);
+    game.load.image('background-black', 'assets/background/background_black.png');
+    game.load.audio('gameOverMusic', 'assets/audio/SoundEffects/NewSoundEffects/Music/gameOver_music_happy.mp3');
+
+
   },
 
 
   create: function(){
     // Hide the Top-menu at Start Screen
     document.getElementById("top-menu").style.display = 'none';
+
+    // get the audio for game over
+    gameOverMusic_audio = game.add.audio('gameOverMusic');
+
     //set background image
-    game.add.image(0, 0, 'StartScreenBG');
+    game.add.image(0, 0, 'GameMenu_bg');
     game.stage.backgroundColor = 'black';
+
+    // stop all sounds
+    game.sound.stopAll();
 
     //  Just to kick things off
     if(gameResult.Level == 1){
@@ -57,17 +70,25 @@ demo.StartScreen.prototype = {
     var feedbackButton = game.add.button(game.world.centerX - 500, game.world.centerY - 80, 'FeedbackButton', StartGameOnClick, this, 2, 1, 0);
     var aboutButton = game.add.button(game.world.centerX - 500, game.world.centerY - 20, 'AboutButton', StartGameOnClick, this, 2, 1, 0);
 
+
   },
 
 
   update: function(){
+
+    if(!gameOverMusic_audio.isPlaying)
+      gameOverMusic_audio.fadeIn(3000, true);
+
+
     if(game.input.keyboard.isDown(Phaser.Keyboard.ENTER)){       
       StartGameOnClick();
     }
-    else
+    else if (game.input.keyboard.isDown(Phaser.Keyboard.C))
     {
 
     }
+
+
   }
 
 

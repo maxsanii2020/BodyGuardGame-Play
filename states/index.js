@@ -118,6 +118,18 @@ demo.Game1.prototype = {
 // preload stage
 preload: function() {
 
+    // pre-loading bar image
+    //game.load.image('loading_bar', 'assets/images/loading_bar.png');
+    //game.load.image('mission-accomplished', 'assets/images/missionAccomplished.png');
+    //var loadingBar = game.add.sprite(300, 300, 'mission-accomplished');
+
+    var sampleTextt = game.add.text(345, 300, "Helloooo");
+
+    /*this.loadingBar = game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'loading_bar');
+    this.loadingBar.anchor.setTo(0.5);
+    this.load.setPreloadSprite(this.loadingBar);
+    */
+
     // Game config
     game.load.script( 'game_config', 'game_config.js');
     // Sprite config
@@ -142,18 +154,6 @@ preload: function() {
     game.load.spritesheet('walkingGuy', 'assets/spritesheets/regularGuy_walk.png', 256, 192, 16);
 
     // JSONHash spritesheets
-    //game.load.atlasJSONHash('StatePolice', 'assets/spritesheets/StatePoliceFinalSpritesheet.png', 'assets/spritesheets/StatePoliceFinalSpritesheet.json');
-    //game.load.atlasJSONHash('Police', 'assets/spritesheets/PoliceSpritesheet.png', 'assets/spritesheets/PoliceSpritesheet.json');
-    //game.load.atlasJSONHash('SecurityPolice', 'assets/spritesheets/securityPoliceSpritesheet.png', 'assets/spritesheets/securityPoliceSpritesheet.json');
-    //game.load.atlasJSONHash('TerroristBlackMask', 'assets/spritesheets/TerroristBlackSpriteSheet.png', 'assets/spritesheets/TerroristBlackSpriteSheet.json');    
-    //game.load.atlasJSONHash('MaskedBandit', 'assets/spritesheets/maskBanditSpritesheet.png', 'assets/spritesheets/maskBanditSpritesheet.json');
-    //game.load.atlasJSONHash('HatBanditBoy', 'assets/spritesheets/HatBanditBoySpritesheet.png', 'assets/spritesheets/HatBanditBoySpritesheet.json');
-    //game.load.atlasJSONHash('GangBandit', 'assets/spritesheets/GangBanditSpritesheet.png', 'assets/spritesheets/GangBanditSpritesheet.json');
-    //game.load.atlasJSONHash('HeadphoneSoldier', 'assets/spritesheets/HeadphoneSoldierSpritesheet.png', 'assets/spritesheets/HeadphoneSoldierSpritesheet.json');
-    //game.load.atlasJSONHash('MilitarySoldier', 'assets/spritesheets/MilitarySoldierSpritesheet.png', 'assets/spritesheets/MilitarySoldierSpritesheet.json');
-    //game.load.atlasJSONHash('allTheBandits', 'assets/spritesheets/allTheBandits.png', 'assets/spritesheets/allTheBandits.json');
-    //game.load.atlasJSONHash('TestGangBandits', 'assets/spritesheets/TestGangBandits.png', 'assets/spritesheets/TestGangBandits.json');
-
     game.load.atlasJSONHash('AllCharacters', 'assets/spritesheets/AllCharacters.png', 'assets/spritesheets/AllCharacters.json');
 
 
@@ -179,6 +179,14 @@ preload: function() {
     game.load.audio('mission-accomplished', 'assets/audio/SoundEffects/NewSoundEffects/Effects/Success.mp3');
     game.load.audio('police-alarm', 'assets/audio/SoundEffects/NewSoundEffects/Crowd/Police_sound.mp3');    
     game.load.audio('gameMusic', 'assets/audio/SoundEffects/NewSoundEffects/Music/game_music_soft_tensionTone.mp3');
+
+    /*
+    var i;
+    for (i = 0; i < 1000000; i++) {
+        console.log("number: " + i);
+    }
+    */
+
 },
 
 
@@ -191,6 +199,9 @@ create: function() {
     // for now, use the classes for creating sprite
 
     /****************************/
+
+    // stop all sounds from gameMenu and gameOver
+    stopAllSounds();
 
     // set game level properties
     setGameLevelProperties(gameResult.Level);
@@ -777,23 +788,21 @@ function gameOver(reason){
     var styleMessage = { font: "60px Arial", fill: "#951717", align: "center", backgroundColor:null, fontWeight: "bold"};
     var timerTextMessage = game.add.text(game.world.centerX-160, game.world.centerY-100, message, styleMessage);
 
-    game.time.events.add(5000, StartStateGameOver, this);
-
     // stop all the sounds
     game.time.events.add(5000, stopAllSounds, this);
-    
-    //stopAllSounds();    
+
+    game.time.events.add(5000, StartStateGameOver, this);
 }
 
 
 function missionCompleted(){
 
-    game.time.events.add(6000, stopAllSounds, this);
-
     // if game is over already, don't do anything
     if(gameConfig.isGameOver) {
         return;
     }
+
+    game.time.events.add(5000, stopAllSounds, this);
 
     gameConfig.isMissionCompleted = true;   
 
@@ -802,13 +811,19 @@ function missionCompleted(){
     missionAccomplished_audio.play();
     var timerText = game.add.image(game.world.centerX, game.world.centerY, 'mission-accomplished').anchor.set(0.5);
 
-    game.time.events.add(6000, StartStateGameOver, this);    
+    game.time.events.add(5000, StartStateGameOver, this);    
 }
 
 function stopAllSounds() {
     // stop the long audios, the audio may have been playing from the last level.
-    //crowdLongCheering_audio.stop();
-    //crowdPanicedLong_Audio.stop();
+    /*
+    crowdLongCheering_audio.stop();
+    crowdPanicedLong_Audio.stop();
+    gameMusic_audio.stop();
+    crowdPanicedManScreem_Audio.stop();
+    crowdPanicedFemaleScreem_Audio.stop();
+    */
+
     game.sound.stopAll();
 }
 
@@ -836,6 +851,10 @@ function saveGameResultValues(status, failureReason) {
 
 // monitor the safe mode and make the respective changes.
 function monitorCrowdMode() {
+    // don't execute if game is over
+    if(gameConfig.isMissionCompleted || gameConfig.isGameOver)
+        return;
+
     // Mode changes to Safe
     if (isSafeMode && crowdCurrentSpeedMode == "scared") 
     {
@@ -875,7 +894,7 @@ function monitorCrowdMode() {
         // play/stop the cheering crowd
         if(peopleCountGreeting >= 2 && !crowdLongCheering_audio.isPlaying)
         {
-            setTimeout(function() {  if(peopleCountGreeting >= 2 && !crowdLongCheering_audio.isPlaying){ crowdLongCheering_audio.fadeIn(2000, true); }  }, 3000);           
+            setTimeout(function() {  if(peopleCountGreeting >= 2 && !crowdLongCheering_audio.isPlaying && !gameConfig.isMissionCompleted && !gameConfig.isGameOver){ crowdLongCheering_audio.fadeIn(2000, true); }  }, 3000);           
         } 
         else if (peopleCountGreeting < 2 && crowdLongCheering_audio.isPlaying) 
         {

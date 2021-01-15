@@ -47,10 +47,17 @@ function as checkgreetingStatus.
 - !DONE create the update function for Boss, and implement the logic for boss to walk and move.
 - !DONE pass the values for Satisfaction and health and status to the gameResult object, create a function that sets all these values, and call the function at gameOver and mission Completed.(small)
 - !DONE enhance the status page.
+- !DONE fix the issue with sound playing after the game is over.
+- !DONE background picture for the gameover.
+- !DONE fix the cop car sound at the end.
+- !DONE adjust the shooting sounds.
+- !DONE fix the stop sound.
 
 
-- fix the cop car sound at the end.
-- adjust the shooting sounds.
+- add loading icon to the background.
+- bring the boss to farther up and down when it goes to corners.
+
+
 
 - test performance when you comment out the whole "updateTopValues", you may need to run that function once a while instead of every time in update();
 - give different health to each character.

@@ -1,11 +1,14 @@
 demo.GameOver = function(){};
 
+
+
 demo.GameOver.prototype = {
 
   preload: function(){
     game.load.spritesheet('NextMissionButton', 'assets/images/nextMissionButton.png', 200, 50);
     game.load.spritesheet('RetryMissionButton', 'assets/images/retryMissionButton.png', 200, 50);    
     game.load.spritesheet('MainMenuButton', 'assets/images/MainMenuButton.png', 200, 50); 
+    game.load.image('background-black', 'assets/background/background_black.png');
 
   },
 
@@ -19,6 +22,9 @@ demo.GameOver.prototype = {
     var currentGameLevel = gameResult.Level;
     var currentSatisfactionRate = gameResult.SatisfactionScore;
 
+    // set background image
+    game.add.image(0, 0, 'background-black');
+
     // Hide the Top-menu at Start Screen
     document.getElementById("top-menu").style.display = 'none';
     game.stage.backgroundColor = 'black';
@@ -27,7 +33,7 @@ demo.GameOver.prototype = {
     if(gameResult.Status == "passed"){
       // raise the level
       gameResult.Level++;
-      
+
       // give bonus to satisfaciton
       gameResult.SatisfactionScore = gameResult.SatisfactionScore + (satisfactionRateScale * (satisfactionPoints.NextLevelBonus/100));
       if(gameResult.SatisfactionScore > satisfactionRateScale)
@@ -82,17 +88,22 @@ demo.GameOver.prototype = {
 
 	  // add the performance report texts to the game page
     var reportStyle = { font: "25px Arial", fill: '#B2BABB' };
-    var reportText = game.add.text(game.world.centerX - 300, game.world.centerY - 30, report, { font: "30px Arial", fill: '#FFFFFF' });
+    var reportText = game.add.text(game.world.centerX - 300, game.world.centerY - 30, report, { font: "27px Arial", fill: '#FFFFFF' });
     var satisfactionText = game.add.text(game.world.centerX - 300, game.world.centerY + 25, satisfaction, reportStyle);    
     var bossHealthText = game.add.text(game.world.centerX - 300, game.world.centerY + 70, bossHealth, reportStyle);
     var playerHealthText = game.add.text(game.world.centerX - 300, game.world.centerY + 120, playerHealth, reportStyle);
     var enemiesKilledText = game.add.text(game.world.centerX - 300, game.world.centerY + 170, enemiesKilled, reportStyle);
     var civiliansKilledText = game.add.text(game.world.centerX - 300, game.world.centerY + 220, peopleKilled, reportStyle);
 
+
   },
 
 
   update: function(){
+    // play game-over music
+    if(!gameOverMusic_audio.isPlaying)
+      gameOverMusic_audio.fadeIn(4000, true);
+
     if(game.input.keyboard.isDown(Phaser.Keyboard.ENTER) || game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)){
       StartGameOnClick();
     }
