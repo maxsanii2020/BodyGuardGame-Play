@@ -10,6 +10,10 @@ demo.GameOver.prototype = {
     game.load.spritesheet('MainMenuButton', 'assets/images/MainMenuButton.png', 200, 50); 
     game.load.image('background-black', 'assets/background/background_black.png');
 
+    // Hide the Top-menu at Start Screen
+    document.getElementById("top-menu").style.display = 'none';
+    game.stage.backgroundColor = 'black';
+
   },
 
 
@@ -24,10 +28,6 @@ demo.GameOver.prototype = {
 
     // set background image
     game.add.image(0, 0, 'background-black');
-
-    // Hide the Top-menu at Start Screen
-    document.getElementById("top-menu").style.display = 'none';
-    game.stage.backgroundColor = 'black';
 
     // Set values for passed scenarios, and determine the top messages
     if(gameResult.Status == "passed"){

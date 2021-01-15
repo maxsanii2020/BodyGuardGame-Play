@@ -125,7 +125,7 @@ preload: function() {
     var styleTest = { font: "40px Arial", fill: "#FFFFFF", align: "center", backgroundColor:null, fontWeight: "bold"};
     var sampleTextt = game.add.text(this.game.world.centerX-100, this.game.world.centerY-100, 'Loading...', styleTest);
 
-    var loadingBar = game.add.sprite(this.game.world.centerX-100, this.game.world.centerY, 'loadingBar');
+    var loadingBar = game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'loadingBar');
     loadingBar.anchor.setTo(0.5);
     game.load.setPreloadSprite(loadingBar);
 
@@ -209,11 +209,11 @@ create: function() {
     // stop all sounds from gameMenu and gameOver
     stopAllSounds();
 
+    // Show the Top-menu at Start Screen
+    document.getElementById("top-menu").style.display = 'block';
+
     // set game level properties
     setGameLevelProperties(gameResult.Level);
-
-    // Hide the Top-menu at Start Screen
-    document.getElementById("top-menu").style.display = 'block';
 
     // Resize our game world to be a 2000 x 2000 square
     //game.world.setBounds(0, 0, 1100, 800);
