@@ -123,7 +123,7 @@ preload: function() {
     //game.load.image('mission-accomplished', 'assets/images/missionAccomplished.png');
     //var loadingBar = game.add.sprite(300, 300, 'mission-accomplished');
     var styleTest = { font: "40px Arial", fill: "#FFFFFF", align: "center", backgroundColor:null, fontWeight: "bold"};
-    var sampleTextt = game.add.text(this.game.world.centerX-200, this.game.world.centerY-100, 'Loading...', styleTest);
+    var sampleTextt = game.add.text(this.game.world.centerX-100, this.game.world.centerY-100, 'Loading...', styleTest);
 
     /*this.loadingBar = game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'loading_bar');
     this.loadingBar.anchor.setTo(0.5);
