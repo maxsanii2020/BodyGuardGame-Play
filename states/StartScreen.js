@@ -43,6 +43,8 @@ demo.StartScreen.prototype = {
     game.load.image('background-black', 'assets/background/background_black.png');
     game.load.audio('gameOverMusic', 'assets/audio/SoundEffects/NewSoundEffects/Music/gameOver_music_happy.mp3');
 
+    //test
+    game.load.image('loadingBar', 'assets/images/loading_bar.png');
 
   },
 
