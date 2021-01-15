@@ -29,6 +29,9 @@ demo.StartScreen.prototype = {
 
   preload: function(){
 
+    // Hide the Top-menu at Start Screen
+    document.getElementById("top-menu").style.display = 'none';
+
     //game.load.image('StartScreenBG', 'assets/images/ScreenStartBG_Bodygaurd.jpg');
     game.load.image('GameMenu_bg', 'assets/images/gameMenu_bg.jpg');
     game.load.spritesheet('StartGameButton', 'assets/images/startGameButtons-colored.png', 200, 50);
@@ -45,8 +48,6 @@ demo.StartScreen.prototype = {
 
 
   create: function(){
-    // Hide the Top-menu at Start Screen
-    document.getElementById("top-menu").style.display = 'none';
 
     // get the audio for game over
     gameOverMusic_audio = game.add.audio('gameOverMusic');
