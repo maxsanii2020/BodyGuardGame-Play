@@ -118,10 +118,6 @@ demo.Game1.prototype = {
 // preload stage
 preload: function() {
 
-    // pre-loading bar image
-    //game.load.image('loading_bar', 'assets/images/loading_bar.png');
-    //game.load.image('mission-accomplished', 'assets/images/missionAccomplished.png');
-
     var styleTest = { font: "40px Arial", fill: "#FFFFFF", align: "center", backgroundColor:null, fontWeight: "bold"};
     var sampleTextt = game.add.text(this.game.world.centerX-100, this.game.world.centerY-100, 'Loading...', styleTest);
 
@@ -129,12 +125,6 @@ preload: function() {
     loadingBar.anchor.setTo(0.5);
     game.load.setPreloadSprite(loadingBar);
 
-
-
-    /*this.loadingBar = game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'loading_bar');
-    this.loadingBar.anchor.setTo(0.5);
-    this.load.setPreloadSprite(this.loadingBar);
-    */
 
     // Game config
     game.load.script( 'game_config', 'game_config.js');
@@ -150,17 +140,9 @@ preload: function() {
     game.load.image('bullet-RPG', 'assets/sprites/RPG-bullet.png');
     game.load.image('gunMan', 'assets/sprites/gunMan.png');
     game.load.image('figure_man', 'assets/sprites/figure_man_small.png');
-    game.load.image('badman', 'assets/sprites/badman.png');
-    game.load.image('boy', 'assets/sprites/regularGuy_resized.png');
-    game.load.image('officeGuy', 'assets/sprites/youngGuy_walk.png');
-    //param: width of the single image (image width/number of frames in a col), height of the single image (image height/number of frames in a row), number of images in that spreadsheet    
-    game.load.spritesheet('girl', 'assets/spritesheets/girl_spritesheet.png', 95, 130, 21);
-    //game.load.spritesheet('simpleGirl', 'assets/spritesheets/girl_spritesheet_new.png', 95, 130, 25);
-
-    game.load.spritesheet('walkingGuy', 'assets/spritesheets/regularGuy_walk.png', 256, 192, 16);
 
     // JSONHash spritesheets
-    game.load.atlasJSONHash('AllCharacters', 'assets/spritesheets/AllCharacters.png', 'assets/spritesheets/AllCharacters.json');
+    game.load.atlasJSONHash('AllCharacters', 'assets/spritesheets/AllCharacters_new.png', 'assets/spritesheets/AllCharacters_new.json');
 
 
     /**************************** audio **********************************/
@@ -185,13 +167,6 @@ preload: function() {
     game.load.audio('mission-accomplished', 'assets/audio/SoundEffects/NewSoundEffects/Effects/Success.mp3');
     game.load.audio('police-alarm', 'assets/audio/SoundEffects/NewSoundEffects/Crowd/Police_sound.mp3');    
     game.load.audio('gameMusic', 'assets/audio/SoundEffects/NewSoundEffects/Music/game_music_soft_tensionTone.mp3');
-
-    /*
-    var i;
-    for (i = 0; i < 1000000; i++) {
-        console.log("number: " + i);
-    }
-    */
 
 },
 
@@ -453,10 +428,10 @@ update: function() {
 
 
     /**************** Testing Tool ***************/
-    if(game.input.keyboard.isDown(Phaser.Keyboard.Z)){       
+    if(game.input.keyboard.isDown(Phaser.Keyboard.Z) && game.input.keyboard.isDown(Phaser.Keyboard.C)){       
         missionCompleted(); 
     }
-    else if(game.input.keyboard.isDown(Phaser.Keyboard.X))
+    else if(game.input.keyboard.isDown(Phaser.Keyboard.X) && game.input.keyboard.isDown(Phaser.Keyboard.Z))
     {
         gameOver("player-dead");
     }
@@ -846,8 +821,8 @@ function saveGameResultValues(status, failureReason) {
     gameResult.gameTimeMin = currentTimeMin;
     gameResult.gameTimeSec = currentTimeSeconds;    
     gameResult.SatisfactionScore = satisfactionRate;
-    gameResult.BossHealth = boss.health;
-    gameResult.PlayerHealth = player.health;
+    gameResult.BossHealth = (boss.health < 0 ? 0 : boss.health);
+    gameResult.PlayerHealth = (player.health < 0 ? 0 : player.health);
 }
 
 
@@ -936,6 +911,10 @@ function increaseSatisfactionByGreeting() {
 
         // increase satisfaction based on the number of greeting people
         switch(true) {
+          case (peopleCountGreeting >= 9):         
+            updateSatisfaction("add", satisfactionPoints.peopleGreetingMin+4);
+            analyticsFlags.bigCrowdCheering = true;
+            break;            
           case (peopleCountGreeting >= 7):         
             updateSatisfaction("add", satisfactionPoints.peopleGreetingMin+3);
             analyticsFlags.bigCrowdCheering = true;

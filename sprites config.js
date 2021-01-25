@@ -361,7 +361,7 @@ CreatePeopleSprite = function (isEnemy, SpriteType, index, game, player, xVal, y
     this.walkRate = 4000;
     this.nextWelcomeBossTime = 0;
     this.nextWelcomeBossRate = 10000;
-    this.welcomeBossDuration = 8000;
+    this.welcomeBossDuration = 0;// this gets set in SetPeopleProperty
     this.angleBetweenPlayerEnemy;
     this.currentAttackMode = "rotation";
     this.nextTimetoRun = 0;
@@ -408,11 +408,11 @@ CreatePeopleSprite = function (isEnemy, SpriteType, index, game, player, xVal, y
         this.bulletXPosition = 50;
         this.bulletYPosition = -20;
         break;
-      case 4:
-        image = 'walkingGuy';
-        this.audio_Death = death_man_2_audio;
-        this.bulletXPosition = 0;
-        this.bulletYPosition = 0;
+      case 4:// black girl
+        image = 'AllCharacters';
+        this.audio_Death = death_female_audio;
+        this.bulletXPosition = 40;
+        this.bulletYPosition = -10;
         break;
       case 5:
         image = 'AllCharacters';
@@ -519,14 +519,17 @@ CreatePeopleSprite = function (isEnemy, SpriteType, index, game, player, xVal, y
         break;
       case 3://office guy
         this.sprite.scale.setTo(0.44,0.44);
-        this.sprite.animations.add('walk', Phaser.Animation.generateFrameNames('officeGuy_Walk_', 0, 4, '.png', 3), 12, true,false);
-        this.sprite.animations.add('attack', Phaser.Animation.generateFrameNames('officeGuy_Attack_', 0, 6, '.png', 3), 7, false,false);   
+        this.sprite.animations.add('walk', Phaser.Animation.generateFrameNames('officeGuy_Walk_', 0, 15, '.png', 3), 12, true,false);
+        this.sprite.animations.add('attack', Phaser.Animation.generateFrameNames('officeGuy_Attack_', 0, 5, '.png', 3), 7, false,false);   
         this.defaultFrame = 10;
         break;
-      case 4://walking guy
-        this.sprite.animations.add('walk', [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], 15, true);
-        this.sprite.animations.play('walk');
-        this.defaultFrame = 0;
+      case 4://black girl
+        this.sprite.scale.setTo(0.30,0.30);
+        this.sprite.animations.add('walk', Phaser.Animation.generateFrameNames('blackGirl_Walk_', 0, 7, '.png', 3), 11, true,false);
+        this.sprite.animations.add('attack', Phaser.Animation.generateFrameNames('blackGirl_Attack_', 0, 4, '.png', 3), 7, false,false);        
+        this.sprite.animations.play('walk');    
+        this.defaultFrame = 13;
+        this.shootingAngleErrorRange = 0.3;
         break;       
       case 5://police
         //this.sprite.scale.setTo(0.11,0.11);
@@ -1007,7 +1010,7 @@ function setPeopleProperties(creature) {
         creature.health = health.enemyHealth;
         creature.walkRate = 4000;
         creature.nextWelcomeBossRate = 10000;
-        creature.welcomeBossDuration = 8000;
+        creature.welcomeBossDuration = gameConfig.welcomeBossDurationEnemy;
 
         // set the distance to kill boss longer for enemy with RPG
         if (creature.enemyWeaponType == "RPG") {
@@ -1130,7 +1133,7 @@ function makeSomeoneRun() {
     
     if(this.game.time.now > nextMakeSomeoneRunTime){
 
-        let candidatesArray = people.filter(x => x.sprite.x <= game.world.centerX && x.sprite.y > (boss.sprite.y-160) && x.sprite.y < (boss.sprite.y+160) && x.isInsidetheWorld == true && x.alive == true && x.currentAnimation == "walk");
+        let candidatesArray = people.filter(x => x.sprite.x <= game.world.centerX && x.sprite.y > (boss.sprite.y-200) && x.sprite.y < (boss.sprite.y+200) && x.isInsidetheWorld == true && x.alive == true && x.currentAnimation == "walk");
 
         if(candidatesArray.length != 0) {
             let chanceToRun;
@@ -1143,7 +1146,7 @@ function makeSomeoneRun() {
                 chanceToRun = gameConfig.peopleStartsRunningChance;
             }
 
-            if(chanceToRun < Math.random())
+            if(chanceToRun > Math.random())
                 candidateObj.currentAnimation = "run";
         }
 

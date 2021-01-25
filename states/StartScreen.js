@@ -33,7 +33,7 @@ demo.StartScreen.prototype = {
     document.getElementById("top-menu").style.display = 'none';
 
     //game.load.image('StartScreenBG', 'assets/images/ScreenStartBG_Bodygaurd.jpg');
-    game.load.image('GameMenu_bg', 'assets/images/gameMenu_bg.jpg');
+    game.load.image('GameMenu_bg', 'assets/background/background_bodyguard_final.png');
     game.load.spritesheet('StartGameButton', 'assets/images/startGameButtons-colored.png', 200, 50);
     game.load.spritesheet('TutorialButton', 'assets/images/tutorialButton.png', 200, 50);
     game.load.spritesheet('FeedbackButton', 'assets/images/feedbackButton.png', 200, 50);
@@ -63,15 +63,15 @@ demo.StartScreen.prototype = {
 
     //  Just to kick things off
     if(gameResult.Level == 1){
-      var gameStartButton = game.add.button(game.world.centerX - 500, game.world.centerY - 200, 'StartGameButton', StartGameOnClick, this, 2, 1, 0);
+      var gameStartButton = game.add.button(game.world.centerX - 450, game.world.centerY - 200, 'StartGameButton', StartGameOnClick, this, 2, 1, 0);
     } else {
-      var gameNextMissionButton = game.add.button(game.world.centerX - 500, game.world.centerY - 260, 'StartNextMissionMainMenuButton', StartGameOnClick, this, 2, 1, 0);
-      var gameRestartButton = game.add.button(game.world.centerX - 500, game.world.centerY - 200, 'StartFirstMissionButton', restartMissionOne, this, 2, 1, 0);    
+      var gameNextMissionButton = game.add.button(game.world.centerX - 450, game.world.centerY - 260, 'StartNextMissionMainMenuButton', StartGameOnClick, this, 2, 1, 0);
+      var gameRestartButton = game.add.button(game.world.centerX - 450, game.world.centerY - 200, 'StartFirstMissionButton', restartMissionOne, this, 2, 1, 0);    
     }
 
-    var tutorialButton = game.add.button(game.world.centerX - 500, game.world.centerY - 140, 'TutorialButton', StartGameOnClick, this, 2, 1, 0);
-    var feedbackButton = game.add.button(game.world.centerX - 500, game.world.centerY - 80, 'FeedbackButton', StartGameOnClick, this, 2, 1, 0);
-    var aboutButton = game.add.button(game.world.centerX - 500, game.world.centerY - 20, 'AboutButton', StartGameOnClick, this, 2, 1, 0);
+    var tutorialButton = game.add.button(game.world.centerX - 450, game.world.centerY - 140, 'TutorialButton', StartGameOnClick, this, 2, 1, 0);
+    var feedbackButton = game.add.button(game.world.centerX - 450, game.world.centerY - 80, 'FeedbackButton', StartGameOnClick, this, 2, 1, 0);
+    var aboutButton = game.add.button(game.world.centerX - 450, game.world.centerY - 20, 'AboutButton', StartGameOnClick, this, 2, 1, 0);
 
 
   },

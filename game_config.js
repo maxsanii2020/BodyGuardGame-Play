@@ -10,7 +10,7 @@ var gameConfig = {
     creatureCount: 0,
     EnemyCreationChance: 0.80,// higher number gives higher chance to create enemies
     EnemysReactionChance: 0.30,// higher number gives higher chance for enemy to shoot
-    EnemyGreetingChance: .30,// the lower number gives the enemy higher chance to decide to attack when get close to boss
+    EnemyGreetingChance: .70,// the higher number gives the enemy higher chance to still greet instead of attack.
     EnemyNextDecideToAttackRate: 1500,// how often the enemy decides between attack or greet the boss
     MaxPeopleInWorldThreshold:0,
     initialPeopleCreationTime:7,
@@ -24,19 +24,20 @@ var gameConfig = {
     isGameOver: false,
     welcomeBossDurationMax: 25000,
     welcomeBossDurationMin: 7000,
-    makeSomeoneRunRate: 5000,
-    enemyStartsRunningChance: .40,
+    welcomeBossDurationEnemy: 25000,// this is the max time an enemy can greet boss, it might happen earlier
+    makeSomeoneRunRate: 4000,
+    enemyStartsRunningChance: .50,
     peopleStartsRunningChance: .20,
     enemyRunScaredChance: .40,// this chance is the actual chance of running, cause people decide to run only once per shooting
     peopleRunScaredChance: .70,// this chance is the actual chance of running, cause people decide to run only once per shooting
     peopleScaredStopGreetingChance: .50,
 
     // distance/angle to Boss/player
-    distanceToGreetBossMax: 350,
-    distanceToGreetBossMin: 200,
+    distanceToGreetBossMax: 400,
+    distanceToGreetBossMin: 170,
     angleToGreetBossMax: 0.9,
     angleToGreetBossMin: -0.9,
-    distanceToKillBossMax: 350,
+    distanceToKillBossMax: 400,
     distanceToKillBossMin: 120,        
     angleToKillBossMax: 0.9,
     angleToKillBossMin: -0.9,
@@ -64,10 +65,10 @@ var gameConfig = {
 var satisfactionPoints = {
     isSafeMode: 2,
     killEnemy: 10,
-    killCivilian: 15,
-    playerBulletHitBoss: 20,
-    enemyBulletHitBoss: 0,//5,
-    bossCompalinStopping: 7,
+    killCivilian: 20,
+    playerBulletHitBoss: 25,
+    enemyBulletHitBoss: 2,
+    bossCompalinStopping: 5,
     bossComplainPushing: 5,
     breakSafeMode: 3,
     peopleGreetingMin: 2,
@@ -76,10 +77,10 @@ var satisfactionPoints = {
 
 /* Health Values */
 var health = {
-    maxHealthScore: 1000,//100,
+    maxHealthScore: 100,
     peopleHealth: 8,
     enemyHealth: 16,
-    gunHitPoint: 4,
+    gunHitPoint: 6,
     rpgHitPoint: 12
 }
 
@@ -97,51 +98,132 @@ function setGameLevelProperties(gameLevel) {
 
     switch(gameLevel) {
       case 1:
-        gameConfig.gameDurationMin = 1;
+        gameConfig.gameDurationMin = 3;
         gameConfig.gameDurationSec = 0;
         gameConfig.creatureTotal = 50;
         gameConfig.creatureCount = 0;
-        gameConfig.EnemyCreationChance = 0.30;// higher number gives higher chance to create enemies
+        gameConfig.EnemyCreationChance = 0.25;// higher number gives higher chance to create enemies
         gameConfig.EnemysReactionChance = 0.30;// higher number gives higher chance for enemy to shoot
         gameConfig.MaxPeopleInWorldThreshold = 0;
         gameConfig.initialPeopleCreationTime = 0;
-        gameConfig.creationTime = 1000;//1000;
-        gameConfig.nextCreationTime = 2000;//6000;
-        gameConfig.nextEntranceTime = 0;
-        gameConfig.entranceWaitingTime = 2000;//5000;
+        gameConfig.creationTime = 0;// first creation time doesn't mean anything, unless you add the current time to it
+        gameConfig.nextCreationTime = 3000;//6000;
+        gameConfig.nextEntranceTime = game.time.now + 3000;// first character entrance time after game begins
+        gameConfig.entranceWaitingTime = 3000;// the interval between the time each character enters the game
         gameConfig.nextStopCommandTime = 0;
         satisfactionRate = satisfactionRateScale;
         break;
       case 2:
-        gameConfig.gameDurationMin = 1;
+        gameConfig.gameDurationMin = 3;
         gameConfig.gameDurationSec = 0;
-        gameConfig.creatureTotal = 60;
+        gameConfig.creatureTotal = 50;
         gameConfig.creatureCount = 0;
-        gameConfig.EnemyCreationChance = 0.40;
-        gameConfig.EnemysReactionChance = 0.40;
+        gameConfig.EnemyCreationChance = 0.30;// higher number gives higher chance to create enemies
+        gameConfig.EnemysReactionChance = 0.30;
         gameConfig.MaxPeopleInWorldThreshold = 0;
         gameConfig.initialPeopleCreationTime = 0;
-        gameConfig.creationTime = 1000;//1000;
-        gameConfig.nextCreationTime = 2000;//6000;
-        gameConfig.nextEntranceTime = 0;
-        gameConfig.entranceWaitingTime = 2000;//5000;
+        gameConfig.creationTime = 0;
+        gameConfig.nextCreationTime = 3000;
+        gameConfig.nextEntranceTime = game.time.now + 1000;
+        gameConfig.entranceWaitingTime = 2500;
         gameConfig.nextStopCommandTime = 0;
         satisfactionRate = satisfactionRateScale;
         break;
       case 3:
-        gameConfig.gameDurationMin = 2;
+        gameConfig.gameDurationMin = 3;
         gameConfig.gameDurationSec = 0;
-        gameConfig.creatureTotal = 30;
+        gameConfig.creatureTotal = 60;
         gameConfig.creatureCount = 0;
-        gameConfig.EnemyCreationChance = 0.50;
+        gameConfig.EnemyCreationChance = 0.35;// higher number gives higher chance to create enemies
         gameConfig.EnemysReactionChance = 0.30;
         gameConfig.MaxPeopleInWorldThreshold = 0;
         gameConfig.initialPeopleCreationTime = 0;
-        gameConfig.creationTime = 700;
-        gameConfig.nextCreationTime = 1000;
-        gameConfig.nextEntranceTime = 0;
+        gameConfig.creationTime = 0;
+        gameConfig.nextCreationTime = 3000;
+        gameConfig.nextEntranceTime = game.time.now + 1000;
+        gameConfig.entranceWaitingTime = 2200;
+        gameConfig.nextStopCommandTime = 0;
+        satisfactionRate = satisfactionRateScale;
+        break;
+      case 4:
+        gameConfig.gameDurationMin = 3;
+        gameConfig.gameDurationSec = 0;
+        gameConfig.creatureTotal = 65;
+        gameConfig.creatureCount = 0;
+        gameConfig.EnemyCreationChance = 0.40;// higher number gives higher chance to create enemies
+        gameConfig.EnemysReactionChance = 0.30;
+        gameConfig.MaxPeopleInWorldThreshold = 0;
+        gameConfig.initialPeopleCreationTime = 0;
+        gameConfig.creationTime = 0;
+        gameConfig.nextCreationTime = 3000;
+        gameConfig.nextEntranceTime = game.time.now + 1000;
+        gameConfig.entranceWaitingTime = 2000;
+        gameConfig.nextStopCommandTime = 0;
+        satisfactionRate = satisfactionRateScale;
+        break;
+      case 5:
+        gameConfig.gameDurationMin = 3;
+        gameConfig.gameDurationSec = 0;
+        gameConfig.creatureTotal = 70;
+        gameConfig.creatureCount = 0;
+        gameConfig.EnemyCreationChance = 0.50;// higher number gives higher chance to create enemies
+        gameConfig.EnemysReactionChance = 0.30;
+        gameConfig.MaxPeopleInWorldThreshold = 0;
+        gameConfig.initialPeopleCreationTime = 0;
+        gameConfig.creationTime = 0;
+        gameConfig.nextCreationTime = 3000;
+        gameConfig.nextEntranceTime = game.time.now + 1000;
+        gameConfig.entranceWaitingTime = 1700;
+        gameConfig.nextStopCommandTime = 0;
+        satisfactionRate = satisfactionRateScale;
+        break;
+      case 6:
+        gameConfig.gameDurationMin = 3;
+        gameConfig.gameDurationSec = 0;
+        gameConfig.creatureTotal = 75;
+        gameConfig.creatureCount = 0;
+        gameConfig.EnemyCreationChance = 0.55;// higher number gives higher chance to create enemies
+        gameConfig.EnemysReactionChance = 0.30;
+        gameConfig.MaxPeopleInWorldThreshold = 0;
+        gameConfig.initialPeopleCreationTime = 0;
+        gameConfig.creationTime = 0;
+        gameConfig.nextCreationTime = 3000;
+        gameConfig.nextEntranceTime = game.time.now + 1000;
+        gameConfig.entranceWaitingTime = 1300;
+        gameConfig.nextStopCommandTime = 0;
+        satisfactionRate = satisfactionRateScale;
+        break;
+      case 7:
+        gameConfig.gameDurationMin = 3;
+        gameConfig.gameDurationSec = 0;
+        gameConfig.creatureTotal = 80;
+        gameConfig.creatureCount = 0;
+        gameConfig.EnemyCreationChance = 0.65;// higher number gives higher chance to create enemies
+        gameConfig.EnemysReactionChance = 0.30;
+        gameConfig.MaxPeopleInWorldThreshold = 0;
+        gameConfig.initialPeopleCreationTime = 0;
+        gameConfig.creationTime = 0;
+        gameConfig.nextCreationTime = 3000;
+        gameConfig.nextEntranceTime = game.time.now + 1000;
         gameConfig.entranceWaitingTime = 1000;
         gameConfig.nextStopCommandTime = 0;
+        satisfactionRate = satisfactionRateScale;
+        break;
+      case 8:
+        gameConfig.gameDurationMin = 3;
+        gameConfig.gameDurationSec = 0;
+        gameConfig.creatureTotal = 80;
+        gameConfig.creatureCount = 0;
+        gameConfig.EnemyCreationChance = 0.65;// higher number gives higher chance to create enemies
+        gameConfig.EnemysReactionChance = 0.30;
+        gameConfig.MaxPeopleInWorldThreshold = 0;
+        gameConfig.initialPeopleCreationTime = 0;
+        gameConfig.creationTime = 0;
+        gameConfig.nextCreationTime = 3000;
+        gameConfig.nextEntranceTime = game.time.now + 1000;
+        gameConfig.entranceWaitingTime = 1000;
+        gameConfig.nextStopCommandTime = 0;
+        satisfactionRate = satisfactionRateScale;
         break;
       default:
         gameConfig.gameDurationMin = 5;
@@ -214,9 +296,9 @@ function setGameLevelProperties(gameLevel) {
     firstQuarterTimeSec = (((((gameConfig.gameDurationMin*60)/4) * 3)/60) - Math.floor((((gameConfig.gameDurationMin*60)/4) * 3)/60)) * 100;
 
     // coordinations for side areas
-    sideAreas.north = 200;
-    sideAreas.south = game.world.height - 200;
-    sideAreas.west = 200;
+    sideAreas.north = 350;
+    sideAreas.south = game.world.height - 350;
+    sideAreas.west = 300;
     sideAreas.east = game.world.width - 200;
 
     // turn over the satisfaction from each level, here we have to get the value from gameResult 
@@ -233,89 +315,91 @@ function setGameLevelProperties(gameLevel) {
 // name: the character name, you can name it anything, not binded to any logic.
 // personType: the key that references that person, should match with personType in sprite config file.
 // enemyChance: percentage to be an enemy
+// calculating chances: if a terrorist has 90% chance of enemy and 10% person, it means that when you see a terrorist in the game, his chance of being an
+// enemy is 90%, on if enemyCreationChance is 50%
 var characters = [
     {
         name: 'santaFirst',
         personType: 1,
-        enemyChance: 90,
+        enemyChance: 20,
         peopleChance: 80
     },
     {
-        name: 'walkingGuy',
+        name: 'blackGirl',
         personType: 4,
-        enemyChance: 0,
-        peopleChance: 100        
+        enemyChance: 15,
+        peopleChance: 200        
     },
     {
         name: 'Police',
         personType: 5,
-        enemyChance: 20,
-        peopleChance: 60        
+        enemyChance: 30,
+        peopleChance: 70        
     },
     {
         name: 'StatePolice',
         personType: 6,
-        enemyChance: 20,
-        peopleChance: 60        
+        enemyChance: 30,
+        peopleChance: 70        
     },
     {
         name: 'SecurityPolice',
         personType: 7,
-        enemyChance: 30,
-        peopleChance: 50        
+        enemyChance: 40,
+        peopleChance: 60        
     },
     {
         name: 'TerroristBlackMask',
         personType: 8,
-        enemyChance: 60,
-        peopleChance: 15        
+        enemyChance: 90,
+        peopleChance: 10        
     },    
     {
         name: 'GangBandit',
         personType: 11,
-        enemyChance: 80,
-        peopleChance: 40        
+        enemyChance: 70,
+        peopleChance: 30        
     },        
     {
         name: 'HatBanditBoy',
         personType: 10,
-        enemyChance: 20,
-        peopleChance: 60        
+        enemyChance: 25,
+        peopleChance: 75        
     },
     {
         name: 'MaskedBandit',
         personType: 9,
-        enemyChance: 20,
-        peopleChance: 70        
+        enemyChance: 75,
+        peopleChance: 30        
     },    
     {
         name: 'HeadphoneSoldier',
         personType: 12,
-        enemyChance: 40,
-        peopleChance: 30        
+        enemyChance: 60,
+        peopleChance: 40        
     },
     {
         name: 'MilitarySoldier',
         personType: 13,
-        enemyChance: 50,
-        peopleChance: 20        
+        enemyChance: 75,
+        peopleChance: 25        
     },
     {
         name: 'simpleGirl',
         personType: 2,
-        enemyChance: 90,
-        peopleChance: 100        
+        enemyChance: 15,
+        peopleChance: 200        
     },
     {
         name: 'officeGuy',
         personType: 3,
-        enemyChance: 90,
-        peopleChance: 100        
+        enemyChance: 20,
+        peopleChance: 150        
     },
     {
         name: 'santaSecond',
         personType: 14,
-        enemyChance: 90,
-        peopleChance: 80
+        enemyChance: 15,
+        peopleChance: 100
     }/**/                                      
 ]

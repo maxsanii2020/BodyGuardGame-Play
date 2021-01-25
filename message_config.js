@@ -95,7 +95,7 @@ function generateMessage(){
         {
             if (messageVisible == false || selectedMessage.priority < currentMessagePriority)
             {
-                console.log("selected message output: " + selectedMessage.message1);
+                //console.log("selected message output: " + selectedMessage.message1);
 
                 // Display the new message
                 let newMessageDisplayed = displayMessage(selectedMessage);
@@ -118,7 +118,7 @@ function generateMessage(){
 
         // Empty the messages list if there has been no new messages in the last 25 sec
         if((this.game.time.now - lastMessageDisplayedTime) > 30000) {
-            console.log("empty the message list!!! " + recentMessagesList);
+            //console.log("empty the message list!!! " + recentMessagesList);
             recentMessagesList.length = 0
         }
 
@@ -414,7 +414,7 @@ var messagesList = [
     message2: "Hello, you're my bodyguard today",
     state: 2,
     priority: 1,
-    expirationTime: 5000,
+    expirationTime: 3000,
     repeatable: false,
     repeatAfter: 10
   },
@@ -424,7 +424,7 @@ var messagesList = [
     message2: "I wanna be around people, don't scare them away.",
     state: 2,
     priority: 1,
-    expirationTime: 7000,
+    expirationTime: 6000,
     repeatable: false,
     repeatAfter: 10
   },
@@ -520,7 +520,7 @@ var messagesList = [
   },
   {
     categoryID: 9,
-    message1: "hey Don't stop people, let them come",
+    message1: "hey Don't stop people, let them come my way",
     message2: "hey let them walk to me",
     state: 0,
     priority: 2,    
@@ -631,7 +631,7 @@ var messagesList = [
   {
     categoryID: 20,
     message1: "I like it when people greet me",
-    message2: "this is great, let people come and greet me",
+    message2: "this is great, let people greet me",
     state: 2,
     priority: 3,
     expirationTime: 5000,
@@ -646,7 +646,7 @@ var messagesList = [
     priority: 3,
     expirationTime: 5000,
     repeatable: false,
-    repeatAfter: 1
+    repeatAfter: 4
   }           
 
 ]
@@ -655,7 +655,7 @@ var messagesList = [
 function detectAnalyticalChanges(){
 
     // Run it every once a while
-    if(this.game.time.now > nextAnalyticsCheck) 
+    if(this.game.time.now >= nextAnalyticsCheck) 
     {
         let enemiesFound = 0;
 
@@ -673,7 +673,7 @@ function detectAnalyticalChanges(){
             }
         }
 
-        console.log("Enemies found: " + enemiesFound);
+        //console.log("Enemies found: " + enemiesFound);
 
 
         if(enemiesFound >= 3){
@@ -686,15 +686,15 @@ function detectAnalyticalChanges(){
         /**** Trigger Greeting message in the beginning of the game ****/
 
         // show the first part right when the game starts
-        if(gameResult.Level == 1 && currentTimeMin == (gameConfig.gameDurationMin - 1) && (currentTimeSeconds >= 56 && currentTimeSeconds <= 59))
+        if(gameResult.Level == 1 && currentTimeMin == (gameConfig.gameDurationMin))
             flags.greetingByBossPart1 = true;
 
         // show the sec part before we reach to 50s second of the game
-        if(gameResult.Level == 1 && currentTimeMin == (gameConfig.gameDurationMin - 1) && (currentTimeSeconds >= 45 && currentTimeSeconds < 54))
+        if(gameResult.Level == 1 && currentTimeMin == (gameConfig.gameDurationMin - 1) && (currentTimeSeconds >= 50 && currentTimeSeconds < 57))
             flags.greetingByBossPart2 = true;
 
         // show the greeting for the next levels
-        if(gameResult.Level != 1 && currentTimeMin == (gameConfig.gameDurationMin - 1) && (currentTimeSeconds >= 56 && currentTimeSeconds <= 59))
+        if(gameResult.Level != 1 && currentTimeMin == (gameConfig.gameDurationMin))
             flags.greetingByBossNextLevels = true;
 
         /*********** Detect if any enemy is shooting ***********/

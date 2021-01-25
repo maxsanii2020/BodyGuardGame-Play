@@ -52,13 +52,19 @@ function as checkgreetingStatus.
 - !DONE fix the cop car sound at the end.
 - !DONE adjust the shooting sounds.
 - !DONE fix the stop sound.
+- !DONE add loading icon to the background.
+- !DONE bring the boss to farther up and down when it goes to corners.
+- !DONE change the game menu background image to the one we use. also trim the bg character better.
+- !DONE change the cheat key to two keys
 
 
-- add loading icon to the background.
-- bring the boss to farther up and down when it goes to corners.
+Phase 1:
+- !DONE adjust the game config (just make sure things are at its best)
+- !DONE adjust the game level properties
+- remove unneccessary code and assets.
+- raise the sound for men get hit.
 
-
-
+Phase 2:
 - test performance when you comment out the whole "updateTopValues", you may need to run that function once a while instead of every time in update();
 - give different health to each character.
 - save the game level to the browser local storage, and retrieve the gameLevel from there. provide an option if the user wants to start over or resume in the menu.
