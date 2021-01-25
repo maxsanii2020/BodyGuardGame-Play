@@ -32,8 +32,7 @@ demo.StartScreen.prototype = {
     // Hide the Top-menu at Start Screen
     document.getElementById("top-menu").style.display = 'none';
 
-    //game.load.image('StartScreenBG', 'assets/images/ScreenStartBG_Bodygaurd.jpg');
-    game.load.image('GameMenu_bg', 'assets/background/background_bodyguard_final.png');
+    game.load.image('GameMenu_bg', 'assets/background/background_black_character.png');
     game.load.spritesheet('StartGameButton', 'assets/images/startGameButtons-colored.png', 200, 50);
     game.load.spritesheet('TutorialButton', 'assets/images/tutorialButton.png', 200, 50);
     game.load.spritesheet('FeedbackButton', 'assets/images/feedbackButton.png', 200, 50);
