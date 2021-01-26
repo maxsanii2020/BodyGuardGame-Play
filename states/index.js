@@ -441,11 +441,11 @@ update: function() {
 
 
 render: function() {
-
+    /*
     weapon.debug();
     var text = "Total People:" + (gameResult.EnemiesTotal + gameResult.PeopleTotal) + ", People: " + gameResult.PeopleTotal + ", Enemies: " + gameResult.EnemiesTotal; 
     game.debug.text(text, 10, 80);
-
+    */
 }
 
 
